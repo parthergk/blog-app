@@ -3,25 +3,25 @@
 :root {
   --background: #d1d1d1;
   --foreground: #171717;
-  
+  --gradient-225: linear-gradient(225deg, rgb(255, 255, 255) 0%, rgb(219, 219, 219) 100%)
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-fraunces: var(--font-fraunces-serif);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #090909;
-    --foreground: #fbfbfb;
-  }
+  --bg-gradient-225: var(--gradient-225);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-fraunces-serif), sans-serif;
   box-sizing: border-box;
+}
+
+main {
+  background: var(--background);
+  color: var(--foreground);
 }
