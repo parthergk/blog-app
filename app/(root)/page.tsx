@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -28,10 +29,34 @@ const page = () => {
                 <span className=" inline sm:hidden">,</span>
                 <span className=" hidden sm:inline"> &</span>
               </h1>
-              <div className=" flex justify-center items-center relative">
-                <div className="inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400  bg-gray-300"></div>{" "}
-                <div className="relative -left-1.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 rotate-1 bg-gray-300"></div>{" "}
-                <div className="relative -left-2.5 bottom-0.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 -rotate-6 bg-gray-300"></div>{" "}
+              <div className="relative flex justify-center items-center ">
+                <div className=" z-10 hover:z-20 relative inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 hover:shadow-emerald-500 -rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                  <Image
+                    alt="logo"
+                    src="/img/framer.png"
+                    fill
+                    sizes="48"
+                    className=" object-center object-contain rounded-[5px]"
+                  />
+                </div>{" "}
+                <div className=" z-10 hover:z-20 relative -left-1.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 hover:shadow-neutral-500 rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                  <Image
+                    alt="logo"
+                    src="/img/next.png"
+                    fill
+                    sizes="48"
+                    className=" object-center object-contain rounded-[5px]"
+                  />
+                </div>{" "}
+                <div className=" z-10 hover:z-20 relative -left-2.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 hover:shadow-blue-500 -rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                  <Image
+                    alt="logo"
+                    src="/img/tailwind.png"
+                    fill
+                    sizes="48"
+                    className=" object-center object-contain rounded-[5px]"
+                  />
+                </div>{" "}
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
