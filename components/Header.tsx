@@ -31,14 +31,13 @@ const Header = () => {
 
   return (
     <header className="absolute z-20 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
-      {/* logo */}
       <div className="flex justify-center items-center gap-1.5">
         <Image
           alt="logo img"
           src="/img/logo.JPG"
           width={44}
           height={44}
-          className=" rounded-[5px] shadow-lg shadow-gray-400 h-[36px] sm:h-[44px] w-[36px] sm:w-[44px]"
+          className=" rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 h-[36px] sm:h-[44px] w-[36px] sm:w-[44px]"
         />
         <span className=" self-end text-[16px] sm:text-lg font-light leading-none">
           Parther
