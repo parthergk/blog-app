@@ -7,9 +7,10 @@ const page = () => {
     <div className="relative z-10">
       <Header />
       <div
-        className=" h-screen overflow-hidden absolute top-0 left-0 right-0 z-0 bg-gradient-to-bl from-[#FFFFFF] from-0% to-[#DBDBDB] to-100%"
+        className=" dark:hidden h-screen overflow-hidden absolute top-0 left-0 right-0 z-0 bg-gradient-to-bl from-[#FFFFFF] from-0% to-[#DBDBDB] to-100% "
         style={{
-          WebkitMask: "radial-gradient(125% 100% at 0% 0%, #000000 0%, rgba(0, 0, 0, 0.22449) 88.29%, rgba(0, 0, 0, 0) 100%)",
+          WebkitMask:
+            "radial-gradient(125% 100% at 0% 0%, #000000 0%, rgba(0, 0, 0, 0.22449) 88.29%, rgba(0, 0, 0, 0) 100%)",
           mask: "radial-gradient(125% 100% at 0% 0%, #000000 0%, rgba(0, 0, 0, 0.22449) 88.29%, rgba(0, 0, 0, 0) 100%)",
         }}
       >
@@ -58,6 +59,17 @@ const page = () => {
             left: "calc(49.09722222222224% - min(960px,426.1711210679905px) / 2)",
           }}
         ></div>
+      </div>
+
+      <div
+        className=" hidden dark:block h-full min-h-screen overflow-hidden absolute top-0 left-0 right-0 z-0 pointer-events-none flex-none order-[1008]"
+        style={{
+          WebkitMask:
+            "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
+          mask: "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
+        }}
+      >
+        <div className=" w-full h-full opacity-5" style={{backgroundImage: "url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')", backgroundSize: "128px", backgroundRepeat: "repeat"}}></div>
       </div>
       <Hero />
     </div>

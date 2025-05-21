@@ -1,10 +1,36 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
-  const dark = false;
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(()=>{
+    const savedTheme = localStorage.getItem("theme");
+    console.log("savedThem", savedTheme);
+    if (savedTheme === "light") {
+      setTheme("light");
+    }else{
+      setTheme("dark");
+    }
+  },[]);
+
+  useEffect(()=>{
+    const htmlElement = document.documentElement;
+    if (theme=="dark") {
+      htmlElement.classList.add("dark");
+    }else{
+      htmlElement.classList.remove("dark");
+    }    
+    localStorage.setItem("theme", theme);
+  },[theme]);
+
+  function handleDarkMode (){
+    setTheme((pre) => (pre === "light" ? "dark" : "light"));
+  }
+
   return (
-    <header className="absolute z-10 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
+    <header className="absolute z-20 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
       {/* logo */}
       <div className="flex justify-center items-center gap-1.5">
         <Image
@@ -21,8 +47,8 @@ const Header = () => {
 
       {/* mode */}
       <div className="self-end">
-        <button className="cursor-pointer text-[16px] sm:text-lg font-light leading-none">
-          {dark ? "Go Dark" : "Go Light"}
+        <button onClick={handleDarkMode} className="cursor-pointer text-[16px] sm:text-lg font-light leading-none">
+          {theme === "dark" ? "Go Light" : "Go Dark"}
         </button>
       </div>
     </header>
