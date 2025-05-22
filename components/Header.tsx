@@ -39,14 +39,14 @@ const Header = () => {
           height={44}
           className=" rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 h-[36px] sm:h-[44px] w-[36px] sm:w-[44px]"
         />
-        <span className=" self-end text-[16px] sm:text-lg font-light leading-none">
+        <span className=" self-end text-lg font-light leading-none">
           Parther
         </span>
       </div>
 
       {/* mode */}
       <div className="self-end">
-        <button onClick={handleDarkMode} className="cursor-pointer text-[16px] sm:text-lg font-light leading-none">
+        <button onClick={handleDarkMode} className="cursor-pointer text-lg font-light leading-none">
           {theme === "dark" ? "Go Light" : "Go Dark"}
         </button>
       </div>

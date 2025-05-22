@@ -74,10 +74,10 @@ const Hero = () => {
       </div>
 
       <div className=" flex justify-center gap-5 mt-8">
-        <button className=" dark:bg-neutral-900 border border-neutral-500  rounded-[5px] px-2 flex justify-center items-center cursor-pointer text-lg shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
+        <button className="text-lg dark:bg-neutral-900 border border-neutral-500  rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
           About me
         </button>
-        <button className="text-white bg-neutral-900 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-[5px] px-2 flex justify-center items-center cursor-pointer text-lg shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
+        <button className="text-lg text-white bg-neutral-900 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
           Email
         </button>
       </div>
