@@ -15,7 +15,7 @@ const Hero = () => {
             </div>
             <div className=" flex gap-2.5">
               <h1 className="inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                <span className=" text-black/50 dark:text-white/50">Components</span>
+                <span className=" text-black/50 dark:text-white">Components</span>
               </h1>
               <h1 className="inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 With
@@ -25,7 +25,7 @@ const Hero = () => {
           <div className=" flex flex-col md:flex-row justify-center items-center gap-2">
             <div className=" flex gap-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                <span className=" text-black/50 dark:text-white/50">Tailwind</span> CSS
+                <span className=" text-black/50 dark:text-white">Tailwind</span> CSS
                 <span className=" inline sm:hidden">,</span>
                 <span className=" hidden sm:inline"> &</span>
               </h1>

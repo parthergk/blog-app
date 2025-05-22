@@ -30,7 +30,7 @@ const Header = () => {
   }
 
   return (
-    <header className="absolute z-20 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
+    <header className="fixed z-20 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
       <div className="flex justify-center items-center gap-1.5">
         <Image
           alt="logo img"

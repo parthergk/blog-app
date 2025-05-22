@@ -1,5 +1,8 @@
+import BlogType from "@/components/BlogType";
+import FeatureBlog from "@/components/FeatureBlog";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import LatestBlog from "@/components/LatestBlog";
 import React from "react";
 
 const page = () => {
@@ -69,9 +72,21 @@ const page = () => {
           mask: "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
         }}
       >
-        <div className=" w-full h-full opacity-5" style={{backgroundImage: "url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')", backgroundSize: "128px", backgroundRepeat: "repeat"}}></div>
+        <div
+          className=" w-full h-full opacity-5"
+          style={{
+            backgroundImage:
+              "url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')",
+            backgroundSize: "128px",
+            backgroundRepeat: "repeat",
+          }}
+        ></div>
       </div>
       <Hero />
+      <FeatureBlog />
+      <div className=" w-full h-60 mt-20 bg-neutral-700"> </div>
+      <LatestBlog />
+      <BlogType/>
     </div>
   );
 };
