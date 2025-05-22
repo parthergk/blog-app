@@ -1,5 +1,6 @@
 import BlogType from "@/components/BlogType";
 import FeatureBlog from "@/components/FeatureBlog";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LatestBlog from "@/components/LatestBlog";
@@ -89,13 +90,20 @@ const page = () => {
       <BlogType />
       <div className=" w-full h-60 mt-20 bg-neutral-700 flex justify-center items-center text-white">
         <div className=" flex flex-col justify-center items-center gap-5">
-        <div className=" rounded-2xl py-1 px-2 border border-neutral-500 text-lg">
-          <input type="text" placeholder="Enter  your email here " className=" outline-none mr-2.5" />
-          <button className=" bg-neutral-400 rounded-2xl px-2 cursor-pointer hover:scale-105">Subscribe</button>
+          <div className=" rounded-2xl py-1 px-2 border border-neutral-500 text-lg">
+            <input
+              type="text"
+              placeholder="Enter  your email here "
+              className=" outline-none mr-2.5"
+            />
+            <button className=" bg-neutral-400 rounded-2xl px-2 cursor-pointer hover:scale-105">
+              Subscribe
+            </button>
+          </div>
+          <h1 className=" text-2xl">No Spam</h1>
         </div>
-        <h1 className=" text-2xl">No Spam</h1>
       </div>
-        </ div>
+      <Footer/>
     </div>
   );
 };
