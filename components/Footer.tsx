@@ -2,7 +2,6 @@ import {
   GithubIcon,
   InstagramIcon,
   Linkedin,
-  TwitchIcon,
   TwitterIcon,
 } from "lucide-react";
 import React from "react";

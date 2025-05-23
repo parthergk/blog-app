@@ -30,7 +30,7 @@ const Hero = () => {
                 <span className=" hidden sm:inline"> &</span>
               </h1>
               <div className="relative flex justify-center items-center ">
-                <div className=" z-10 hover:z-20 relative inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 hover:shadow-emerald-500 -rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                <div className=" z-10 hover:z-20 relative inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-neutral-500 dark:shadow-neutral-700 hover:shadow-emerald-500 -rotate-6 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
                   <Image
                     alt="logo"
                     src="/img/framer.png"
@@ -39,7 +39,7 @@ const Hero = () => {
                     className=" object-center object-contain rounded-[5px]"
                   />
                 </div>{" "}
-                <div className=" z-10 hover:z-20 relative -left-1.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 hover:shadow-neutral-500 dark:hover:shadow-neutral-950 rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                <div className=" z-10 hover:z-20 relative -left-1.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-neutral-500 dark:shadow-neutral-700 hover:shadow-neutral-700 dark:hover:shadow-neutral-950 rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
                   <Image
                     alt="logo"
                     src="/img/next.png"
@@ -48,7 +48,7 @@ const Hero = () => {
                     className=" object-center object-contain rounded-[5px]"
                   />
                 </div>{" "}
-                <div className=" z-10 hover:z-20 relative -left-2.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 hover:shadow-blue-500  -rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
+                <div className=" z-10 hover:z-20 relative -left-2.5 inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-neutral-500 dark:shadow-neutral-700 hover:shadow-[#0d99da]  -rotate-3 hover:rotate-0 hover:scale-110 cursor-pointer bg-gray-300 transition-all duration-150 ease-in-out">
                   <Image
                     alt="logo"
                     src="/img/tailwind.png"
@@ -74,10 +74,10 @@ const Hero = () => {
       </div>
 
       <div className=" flex justify-center gap-5 mt-8">
-        <button className="text-lg dark:bg-neutral-900 border border-neutral-500  rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
+        <button className="text-lg dark:bg-neutral-900 border border-neutral-500 rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
           About me
         </button>
-        <button className="text-lg text-white bg-neutral-900 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
+        <button className="text-lg text-white bg-neutral-900 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
           Email
         </button>
       </div>

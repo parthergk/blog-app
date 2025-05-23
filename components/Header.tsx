@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -31,22 +32,22 @@ const Header = () => {
 
   return (
     <header className="fixed z-20 w-full flex justify-between items-center p-5 md:px-7 md:py-6">
-      <div className="flex justify-center items-center gap-1.5">
+      <Link href="/" className="flex justify-center items-center gap-1.5">
         <Image
           alt="logo img"
           src="/img/logo.JPG"
           width={44}
           height={44}
-          className=" rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-700 h-[36px] sm:h-[44px] w-[36px] sm:w-[44px]"
+          className=" rounded-[5px] shadow-lg shadow-neutral-600 dark:shadow-neutral-950 h-[36px] sm:h-[44px] w-[36px] sm:w-[44px]"
         />
-        <span className=" self-end text-lg font-light leading-none">
+        <span className=" self-end text-lg sm:text-xl font-light leading-none">
           Parther
         </span>
-      </div>
+      </Link>
 
       {/* mode */}
       <div className="self-end">
-        <button onClick={handleDarkMode} className="cursor-pointer text-lg font-light leading-none">
+        <button onClick={handleDarkMode} className="cursor-pointer text-lg sm:text-xl font-light leading-none">
           {theme === "dark" ? "Go Light" : "Go Dark"}
         </button>
       </div>

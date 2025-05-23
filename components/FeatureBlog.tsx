@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const FeatureBlog = () => {
@@ -8,9 +9,10 @@ const FeatureBlog = () => {
           Feature Article
         </h1>
       </div>
+      <Link href="/">
       <div className=" flex flex-col-reverse md:flex-row gap-4 md:gap-6 lg:gap-8 xl:gap-10">
         <div className=" w-full flex flex-col gap-3">
-          <h1 className=" text-2xl sm:text-3xl lg:text-[40px] text-neutral-800">
+          <h1 className=" dark:text-white text-2xl sm:text-3xl lg:text-[40px] text-neutral-800">
             How to build a flip text animation
           </h1>
           <p className=" text-sm sm:text-base text-black/60 dark:text-white/60">
@@ -25,6 +27,7 @@ const FeatureBlog = () => {
 
         <div className=" w-full h-60 md:h-64 bg-neutral-700 "></div>
       </div>
+      </Link>
     </div>
   );
 };

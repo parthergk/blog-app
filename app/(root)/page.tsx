@@ -85,10 +85,10 @@ const page = () => {
       </div>
       <Hero />
       <FeatureBlog />
-      <div className=" w-full h-60 py-12 md:py-16 lg:py-24 bg-neutral-700"> </div>
+      <div className=" w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700"> </div>
       <LatestBlog />
       <BlogType />
-      <div className="my-12 md:my-16 lg:my-24 w-full h-60 mt-20 bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
+      <div className="my-12 md:my-16 lg:my-24 w-full h-60 bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
         <div className=" flex flex-col justify-center items-center gap-5">
           <div className=" rounded-2xl py-1 px-2 border border-neutral-500 text-base">
             <input
