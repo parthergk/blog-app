@@ -85,19 +85,19 @@ const page = () => {
       <div className=" w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700"> </div>
       <LatestBlog />
       <BlogType />
-      <div className="my-12 md:my-16 lg:my-24 w-full h-60 bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
+      <div className="my-12 md:my-16 lg:my-24 w-full h-60 bg-[#c0c0c0] dark:bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
         <div className=" flex flex-col justify-center items-center gap-5">
-          <div className=" rounded-2xl py-1 px-2 border border-neutral-500 text-base">
+          <div className=" rounded-2xl py-1 px-2 border border-neutral-400 dark:border-neutral-500 text-base ">
             <input
               type="text"
               placeholder="Enter  your email here "
-              className=" outline-none mr-2.5 max-w-48"
+              className=" outline-none mr-2.5 max-w-48 text-neutral-900 dark:text-neutral-200"
             />
-            <button className=" bg-neutral-400 rounded-2xl px-2 cursor-pointer hover:scale-105">
+            <button className=" bg-neutral-400 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200 rounded-2xl px-2 cursor-pointer hover:scale-105">
               Subscribe
             </button>
           </div>
-          <h1 className=" text-2xl">No Spam</h1>
+          <h1 className=" text-2xl text-neutral-900 dark:text-white">No Spam</h1>
         </div>
       </div>
     </div>
