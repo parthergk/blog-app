@@ -1,7 +1,5 @@
 import BlogType from "@/components/BlogType";
 import FeatureBlog from "@/components/FeatureBlog";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LatestBlog from "@/components/LatestBlog";
 import React from "react";
@@ -9,7 +7,6 @@ import React from "react";
 const page = () => {
   return (
     <div className="relative z-10">
-      <Header />
       <div
         className=" dark:hidden h-screen overflow-hidden absolute top-0 left-0 right-0 z-0 bg-gradient-to-bl from-[#FFFFFF] from-0% to-[#DBDBDB] to-100% "
         style={{
@@ -103,7 +100,6 @@ const page = () => {
           <h1 className=" text-2xl">No Spam</h1>
         </div>
       </div>
-      <Footer/>
     </div>
   );
 };

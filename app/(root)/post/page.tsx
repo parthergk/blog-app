@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogPost = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12 font-serif">
+    <div className="max-w-3xl mx-auto px-4 py-6 font-serif mt-12 md:mt-16 lg:mt-24">
       <h1 className="dark:text-white text-2xl sm:text-3xl lg:text-[40px] text-neutral-800 leading-tight">Creating Smooth Page<br />Transitions with Framer Motion</h1>
       <p className="text-sm text-black/40 dark:text-white/50 mt-2">April 8, 2025</p>
 
@@ -45,15 +45,15 @@ const BlogPost = () => {
       <h2 className="text-xl mt-10">We should have something like this:</h2>
       <div className="bg-gray-200 h-64 rounded-lg mt-4"></div>
 
-      <div className="bg-gray-100 p-4 mt-8 rounded">
-        <h3 className="text-sm sm:text-base font-semibold mb-1">Note</h3>
+      <div className="bg-gray-100 p-4 mt-8 rounded dark:bg-neutral-800">
+        <h3 className="text-sm sm:text-base font-semibold mb-1 ">Note</h3>
         <p className="text-black/60 dark:text-white/60 text-sm">
           Framer Motion handles all the complex animation logic under the hood, including
           physics-based transitions, gesture recognition, and accessibility features.
         </p>
       </div>
 
-      <div className="bg-gray-100 p-4 mt-4 rounded">
+      <div className="bg-gray-100 p-4 mt-4 rounded dark:bg-neutral-800">
         <h3 className="text-sm sm:text-base font-semibold mb-1">Tip</h3>
         <p className="text-black/60 dark:text-white/60 text-sm">
           When using Framer Motion with Tailwind, you can combine Tailwind's utility classes with
