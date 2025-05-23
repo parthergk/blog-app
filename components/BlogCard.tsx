@@ -5,7 +5,7 @@ const BlogCard = () => {
   return (
     <div className=" w-xl mb-10 ">
         <Link href="/" className="flex flex-col md:flex-row gap-5">
-        <div className=" w-full h-60 bg-neutral-700"></div>
+        <div className=" w-full h-60 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out"></div>
         <div className=" w-full flex flex-col gap-5">
           <div className=" w-full h-1 bg-neutral-800 dark:bg-white"></div>
           <div className=" flex flex-col gap-3 px-3">
