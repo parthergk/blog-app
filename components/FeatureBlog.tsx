@@ -12,7 +12,7 @@ const FeatureBlog = () => {
       <Link href="/">
       <div className=" flex flex-col-reverse md:flex-row gap-4 md:gap-6 lg:gap-8 xl:gap-10">
         <div className=" w-full flex flex-col gap-3">
-          <h1 className=" dark:text-white text-2xl sm:text-3xl lg:text-[40px] text-neutral-800">
+          <h1 className=" dark:text-white text-2xl sm:text-3xl lg:text-[40px] text-neutral-800 leading-tight">
             How to build a flip text animation
           </h1>
           <p className=" text-sm sm:text-base text-black/60 dark:text-white/60">

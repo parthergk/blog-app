@@ -12,10 +12,10 @@ const BlogCard = () => {
             <h1 className=" dark:text-white text-2xl text-neutral-800">
               How to build a flip text animation
             </h1>
-            <p className=" text-sm sm:text-base text-black/60 dark:text-white/60">
+            <p className=" text-sm sm:text-base text-black/50 dark:text-white/60">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <span className=" text-sm sm:text-base text-black/60 dark:text-white/60">
+            <span className=" text-sm sm:text-base text-black/50 dark:text-white/60">
               May 1, 2025
             </span>
           </div>
