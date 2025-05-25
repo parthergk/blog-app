@@ -1,8 +1,33 @@
+"use client";
+import CodeBlock from "@/components/CodeBlock";
 import Note from "@/components/Note";
 import Tip from "@/components/Tip";
-import React from "react";
+import { Copy, CopyCheck } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 
 const BlogPost = () => {
+  const [isCopy, setIsCopy] = useState(false);
+  const timeoutRef = useRef(null);
+
+  async function handleCopy() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    await navigator.clipboard.writeText("gaurav kumar");
+    setIsCopy(true);
+
+    timeoutRef.current = setTimeout(() => {
+      setIsCopy(false);
+      timeoutRef.current = null;
+    }, 2000);
+  }
+
+  useEffect(()=>{
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  },[]);
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 font-serif mt-12 md:mt-16 lg:mt-24">
       <div
@@ -70,11 +95,19 @@ const BlogPost = () => {
       <p className="mt-4 text-sm sm:text-base text-black/60 dark:text-white/60">
         First, let's install Framer Motion in your React project:
       </p>
-      <div className="border rounded p-4 bg-gray-50 mt-2">
-        <code className="text-black/80">
-          &lt;&gt; components/page-transition.tsx
-        </code>
-      </div>
+
+      <div className="border border-neutral-500 rounded mt-3">
+  <div className="p-2 flex justify-between items-center dark:text-white text-black/80">
+    <span>&lt;&gt; components/page-transition.tsx</span>
+    {isCopy ? (
+      <CopyCheck className="h-6 w-6 cursor-pointer" />
+    ) : (
+      <Copy className="h-6 w-6 cursor-pointer" onClick={handleCopy} /> 
+    )}
+  </div>
+  <CodeBlock />
+</div>
+
 
       <h2 className="text-xl mt-10">We should have something like this:</h2>
       <div className="bg-gray-200 h-64 rounded-lg mt-4"></div>
