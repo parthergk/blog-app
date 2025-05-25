@@ -6,8 +6,18 @@ import { Copy, CopyCheck } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
 const BlogPost = () => {
+  const codeString = `useEffect(() => {
+  const lenis = new Lenis()
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+}, [])`
   const [isCopy, setIsCopy] = useState(false);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<null | NodeJS.Timeout>(null);
 
   async function handleCopy() {
     if (timeoutRef.current) {
@@ -22,11 +32,11 @@ const BlogPost = () => {
     }, 2000);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-  },[]);
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 font-serif mt-12 md:mt-16 lg:mt-24">
@@ -97,17 +107,16 @@ const BlogPost = () => {
       </p>
 
       <div className="border border-neutral-500 rounded mt-3">
-  <div className="p-2 flex justify-between items-center dark:text-white text-black/80">
-    <span>&lt;&gt; components/page-transition.tsx</span>
-    {isCopy ? (
-      <CopyCheck className="h-6 w-6 cursor-pointer" />
-    ) : (
-      <Copy className="h-6 w-6 cursor-pointer" onClick={handleCopy} /> 
-    )}
-  </div>
-  <CodeBlock />
-</div>
-
+        <div className="p-2 flex justify-between items-center dark:text-white text-black/80">
+          <span>&lt;&gt; components/page-transition.tsx</span>
+          {isCopy ? (
+            <CopyCheck className="h-6 w-6 cursor-pointer" />
+          ) : (
+            <Copy className="h-6 w-6 cursor-pointer" onClick={handleCopy} />
+          )}
+        </div>
+        <CodeBlock codeString = {codeString}/>
+      </div>
 
       <h2 className="text-xl mt-10">We should have something like this:</h2>
       <div className="bg-gray-200 h-64 rounded-lg mt-4"></div>
