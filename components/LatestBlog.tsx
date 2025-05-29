@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "./BlogCard";
+import BlogCard from "./cards/BlogCard";
 
 const LatestBlog = () => {
   const array = [1, 2, 3, 4, 5, 6, 7];

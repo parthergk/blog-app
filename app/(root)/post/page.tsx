@@ -1,11 +1,11 @@
 "use client";
-import CodeCard from "@/components/CodeCard";
-import CodeExplanation from "@/components/CodeExplanation";
-import DemoCard from "@/components/DemoCard";
-import Note from "@/components/Note";
-import OutPutCard from "@/components/OutPutCard";
-import PostHeader from "@/components/PostHeader";
-import Tip from "@/components/Tip";
+import CodeCard from "@/components/cards/CodeCard";
+import CodeExplanation from "@/components/post/CodeExplanation";
+import DemoCard from "@/components/cards/DemoCard";
+import Note from "@/components/post/Note";
+import OutPutCard from "@/components/cards/OutPutCard";
+import PostHeader from "@/components/post/PostHeader";
+import Tip from "@/components/post/Tip";
 
 const BlogPost = () => {
   return (

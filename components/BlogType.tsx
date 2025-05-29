@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import TypeCard from "./TypeCard";
+import TypeCard from "./cards/TypeCard";
 
 const BlogType: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
