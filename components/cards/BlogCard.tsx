@@ -1,27 +1,33 @@
 import Link from "next/link";
 import React from "react";
-
-const BlogCard = () => {
+interface Prop {
+  slug: string;
+  img: string;
+  title: string;
+  desc: string;
+  date: string;
+}
+const BlogCard: React.FC<Prop> = ({slug, img, title, desc, date }) => {
   return (
     <div className=" w-full max-w-xl mb-10 ">
-        <Link href="/" className="flex flex-col md:flex-row gap-5">
+      <Link href={`/post/${slug}`} className="flex flex-col md:flex-row gap-5">
         <div className=" w-full h-60 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out"></div>
         <div className=" w-full flex flex-col gap-5">
           <div className=" w-full h-1 bg-neutral-800 dark:bg-white"></div>
           <div className=" flex flex-col gap-3 px-3">
             <h1 className=" dark:text-white text-2xl text-neutral-800">
-              How to build a flip text animation
+              {title}
             </h1>
-            <p className=" text-sm sm:text-base text-black/50 dark:text-white/60">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p className=" text-sm sm:text-base text-black/50 dark:text-white/60 line-clamp-2">
+              {desc}
             </p>
             <span className=" text-sm sm:text-base text-black/50 dark:text-white/60">
-              May 1, 2025
+              {date}
             </span>
           </div>
         </div>
-    </Link>
-      </div>
+      </Link>
+    </div>
   );
 };
 
