@@ -39,8 +39,9 @@ const BlogPost = () => {
         <Note />
         <Tip />
           </div>
-        <div className="py-12 md:py-16 lg:py-24 px-5 md:px-7 ">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-5 sm:gap-10 ">
+        <div className="pt-12 md:pt-16 lg:pt-24 px-5 md:px-7 ">
+          <h1 className="text-2xl mb-5">Related Animations</h1>
+          <div className="flex flex-col md:flex-row items-center justify-between ">
           {array.map((item) => (
             <BlogCard key={item} />
           ))}
