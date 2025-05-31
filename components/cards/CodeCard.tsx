@@ -1,3 +1,4 @@
+"use client"
 import { Copy, CopyCheck } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import CodeBlock from "../post/CodeBlock";

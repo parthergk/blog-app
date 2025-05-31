@@ -1,4 +1,3 @@
-"use client";
 import CodeCard from "@/components/cards/CodeCard";
 import CodeExplanation from "@/components/post/CodeExplanation";
 import DemoCard from "@/components/cards/DemoCard";
@@ -8,7 +7,9 @@ import PostHeader from "@/components/post/PostHeader";
 import Tip from "@/components/post/Tip";
 import BlogCard from "@/components/cards/BlogCard";
 
-const BlogPost = () => {
+const BlogPost = async ({params }: {params:{slug:string}}) => {
+  console.log("props", await params );
+  
   const array = [1, 2];
   return (
     <div className="w-full">
