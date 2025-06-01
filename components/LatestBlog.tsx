@@ -12,7 +12,7 @@ const LatestBlog = () => {
       </div>
       <div className=" flex flex-wrap justify-between">
         {posts.map((post) => (
-          <BlogCard key={post.id} slug={post.slug} img={post.img} title={post.title} desc = {post.description} date= {post.date} />
+          <BlogCard  key={post.id} videoUrl={post.videoUrl} slug={post.slug} img={post.img} title={post.title} desc = {post.description} date= {post.date} />
         ))}
       </div>
     </div>

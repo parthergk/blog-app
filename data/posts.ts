@@ -9,12 +9,13 @@ export const posts = [
       "Page transitions can significantly enhance the user experience of your React application. With Framer Motion, you can create beautiful, physics-based animations with minimal code. In this tutorial, we'll build a smooth page transition effect that you can easily integrate into your Next.js or React projects.",
     tags: ["framer-motion", "parallax", "scroll"],
     img: "/img/post.png",
+    videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Text Parallax Demo",
-          previewUrl: "/img/post.png",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/text-parallax" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -122,12 +123,13 @@ export const posts = [
       "Glassmorphism creates a beautiful frosted glass look that's trending in modern UI design. In this tutorial, you'll learn how to create reusable glassmorphism card components using Tailwind CSS.",
     tags: ["tailwind", "glassmorphism", "ui"],
     img: "/img/post.png",
+        videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Glassmorphism Card Demo",
-          previewUrl: "/video/glassmorphism.mp4",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/glass-cards" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -168,12 +170,13 @@ export const posts = [
       "Hover effects bring interactivity to UI components. This post shows how to create a modern reveal animation on hover using Tailwind and Framer Motion.",
     tags: ["framer-motion", "tailwind", "hover-effect"],
     img: "/img/post.png",
+            videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Hover Reveal Demo",
-          previewUrl: "/video/hover-reveal.mp4",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/hover-reveal" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -214,12 +217,13 @@ export const posts = [
       "Typing effects can bring life to headers and hero sections. Learn how to implement a customizable typing animation with vanilla JavaScript and Tailwind CSS.",
     tags: ["javascript", "animation", "typing-effect"],
     img: "/img/post.png",
+            videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Typing Effect Demo",
-          previewUrl: "/video/typing-effect.mp4",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/typing-text" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -259,12 +263,13 @@ export const posts = [
       "Learn how to create a scroll indicator at the top of the page that tracks user progress using React hooks and a bit of CSS.",
     tags: ["react", "scroll", "progress-bar"],
     img: "/img/post.png",
+            videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Scroll Progress Bar Demo",
-          previewUrl: "/video/scroll-progress.mp4",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/scroll-progress" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -299,12 +304,13 @@ export const posts = [
       "Card flip animations are popular for interactive portfolios and product showcases. Here’s how to implement one using Tailwind CSS and plain CSS.",
     tags: ["css", "animation", "tailwind"],
     img: "/img/post.png",
+            videoUrl: "/img/videoBg.mov",
     content: [
       {
         type: "DemoCard",
         props: {
           title: "Flip Card Demo",
-          previewUrl: "/video/flip-card.mp4",
+          previewUrl: "/img/videoBg.mov",
           links: [
             { label: "Live Demo", url: "/demo/flip-card" },
             { label: "Source Code", url: "https://github.com/..." },

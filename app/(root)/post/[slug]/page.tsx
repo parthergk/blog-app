@@ -67,7 +67,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
         <h1 className="text-2xl mb-5">Related Animations</h1>
         <div className="flex flex-col md:flex-row items-center justify-between gap-5 ">
           {related.map((item) => (
-            <BlogCard key={item.id} slug={item.slug} img={item.img} title={item.title} desc={item.description} date={item.date} />
+            <BlogCard key={item.id} videoUrl={item.videoUrl} slug={item.slug} img={item.img} title={item.title} desc={item.description} date={item.date} />
           ))}
         </div>
       </div>
