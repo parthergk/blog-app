@@ -15,11 +15,6 @@ export const posts = [
         props: {
           title: "Text Parallax Demo",
           previewUrl: "/img/post.png", //instead of image use video for demo
-        },
-      },
-      {
-        type: "LinkBlock",
-        props: {
           links: [
             { label: "Live Demo", url: "/demo/text-parallax" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -96,7 +91,7 @@ export const posts = [
     description:
       "Glassmorphism creates a beautiful frosted glass look that's trending in modern UI design. In this tutorial, you'll learn how to create reusable glassmorphism card components using Tailwind CSS.",
     tags: ["tailwind", "glassmorphism", "ui"],
-        img: "/img/post.png",
+    img: "/img/post.png",
     content: [
       {
         type: "DemoCard",
@@ -147,7 +142,7 @@ export const posts = [
     description:
       "Hover effects bring interactivity to UI components. This post shows how to create a modern reveal animation on hover using Tailwind and Framer Motion.",
     tags: ["framer-motion", "tailwind", "hover-effect"],
-        img: "/img/post.png",
+    img: "/img/post.png",
     content: [
       {
         type: "DemoCard",
@@ -189,7 +184,7 @@ export const posts = [
     description:
       "Typing effects can bring life to headers and hero sections. Learn how to implement a customizable typing animation with vanilla JavaScript and Tailwind CSS.",
     tags: ["javascript", "animation", "typing-effect"],
-        img: "/img/post.png",
+    img: "/img/post.png",
     content: [
       {
         type: "DemoCard",
@@ -230,7 +225,7 @@ export const posts = [
     description:
       "Sticky navbars are essential for improving UX, especially in long-scroll websites. Learn how to build a responsive sticky navbar using just Tailwind classes.",
     tags: ["tailwind", "navbar", "responsive"],
-        img: "/img/post.png",
+    img: "/img/post.png",
     content: [
       {
         type: "DemoCard",
@@ -264,7 +259,7 @@ export const posts = [
     description:
       "Default scrollbars can look outdated. This guide shows how to create modern, minimal scrollbar styles using Tailwind and CSS variables.",
     tags: ["tailwind", "scrollbar", "css"],
-        img: "/img/post.png",
+    img: "/img/post.png",
     content: [
       {
         type: "CodeExplanation",

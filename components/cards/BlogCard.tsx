@@ -7,7 +7,7 @@ interface Prop {
   desc: string;
   date: string;
 }
-const BlogCard: React.FC<Prop> = ({slug, img, title, desc, date }) => {
+const BlogCard: React.FC<Prop> = ({ slug, img, title, desc, date }) => {
   return (
     <div className=" w-full max-w-xl mb-10 ">
       <Link href={`/post/${slug}`} className="flex flex-col md:flex-row gap-5">

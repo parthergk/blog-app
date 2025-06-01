@@ -6,10 +6,22 @@ import OutPutCard from "@/components/cards/OutPutCard";
 import PostHeader from "@/components/post/PostHeader";
 import Tip from "@/components/post/Tip";
 import BlogCard from "@/components/cards/BlogCard";
+import { posts } from "@/data/posts";
 
-const BlogPost = async ({params }: {params:{slug:string}}) => {
-  console.log("props", await params );
-  
+const componentMap = {
+  DemoCard: (props) => <DemoCard {...props} />,
+  CodeExplanation: (props) => <CodeExplanation {...props} />,
+  CodeCard: (props) => <CodeCard {...props} />,
+  OutPutCard: (props) => <OutPutCard {...props} />,
+  Note: (props) => <Note {...props} />,
+  Tip: (props) => <Tip {...props} />,
+}
+
+const BlogPost = async ({ params }: { params: { slug: string } }) => {
+  const slug = await params.slug;
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) return <div className="text-center py-10">Post not found</div>;
+
   const array = [1, 2];
   return (
     <div className="w-full">
@@ -32,22 +44,33 @@ const BlogPost = async ({params }: {params:{slug:string}}) => {
             }}
           ></div>
         </div>
-        <PostHeader />
-        <DemoCard />
+        <PostHeader
+          title={post.title}
+          desc={post.description}
+          date={post.date}
+        />
+        {
+          post.content.map((block, index)=>{
+            const Component = componentMap[block.type];
+            if(!Component) return null;
+            return <div key={index}>{Component(block.props)}</div>
+          })
+        }
+        {/* <DemoCard />
         <CodeExplanation />
         <CodeCard />
         <OutPutCard />
         <Note />
-        <Tip />
-          </div>
-        <div className="pt-12 md:pt-16 lg:pt-24 px-5 md:px-7 ">
-          <h1 className="text-2xl mb-5">Related Animations</h1>
-          <div className="flex flex-col md:flex-row items-center justify-between ">
+        <Tip /> */}
+      </div>
+      <div className="pt-12 md:pt-16 lg:pt-24 px-5 md:px-7 ">
+        <h1 className="text-2xl mb-5">Related Animations</h1>
+        <div className="flex flex-col md:flex-row items-center justify-between ">
           {array.map((item) => (
             <BlogCard key={item} />
           ))}
-          </div>
         </div>
+      </div>
     </div>
   );
 };
