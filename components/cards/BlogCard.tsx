@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 interface Prop {
@@ -11,7 +12,9 @@ const BlogCard: React.FC<Prop> = ({ slug, img, title, desc, date }) => {
   return (
     <div className=" w-full max-w-xl mb-10 ">
       <Link href={`/post/${slug}`} className="flex flex-col md:flex-row gap-5">
-        <div className=" w-full h-60 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out"></div>
+        <div className=" relative w-full h-60 min-w-72 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out">
+          <Image alt="img" src={img} fill className=" object-contain"/>
+        </div>
         <div className=" w-full flex flex-col gap-5">
           <div className=" w-full h-1 bg-neutral-800 dark:bg-white"></div>
           <div className=" flex flex-col gap-3 px-3">

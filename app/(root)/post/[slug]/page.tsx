@@ -31,7 +31,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return <div className="text-center py-10">Post not found</div>;
 
-  const array = [1, 2];
+  const related = posts.slice(0, 2)
   return (
     <div className="w-full">
       <div className="max-w-3xl mx-auto px-4 py-6 font-serif mt-12 md:mt-16 lg:mt-24">
@@ -66,8 +66,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
       <div className="pt-12 md:pt-16 lg:pt-24 px-5 md:px-7 ">
         <h1 className="text-2xl mb-5">Related Animations</h1>
         <div className="flex flex-col md:flex-row items-center justify-between gap-5 ">
-          {array.map((item) => (
-            <BlogCard key={item} />
+          {related.map((item) => (
+            <BlogCard key={item.id} slug={item.slug} img={item.img} title={item.title} desc={item.description} date={item.date} />
           ))}
         </div>
       </div>
