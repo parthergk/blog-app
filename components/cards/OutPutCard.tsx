@@ -1,6 +1,10 @@
 import React from "react";
 
-const OutPutCard = ({alt, img}) => {
+interface Props{
+  alt: string;
+  img: string;
+}
+const OutPutCard:React.FC<Props> = ({alt, img}) => {
   return (
     <div className=" mt-10">
       {" "}

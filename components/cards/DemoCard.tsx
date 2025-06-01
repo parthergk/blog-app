@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
-
-const DemoCard = ({ previewUrl, links }) => {
+interface Props{
+  previewUrl: string
+  links: Array<{url: string, label: string}>
+}
+const DemoCard:React.FC<Props> = ({ previewUrl, links }) => {
   console.log("props", previewUrl, links);
 
   return (

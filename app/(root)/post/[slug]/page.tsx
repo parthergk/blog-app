@@ -7,15 +7,24 @@ import PostHeader from "@/components/post/PostHeader";
 import Tip from "@/components/post/Tip";
 import BlogCard from "@/components/cards/BlogCard";
 import { posts } from "@/data/posts";
+import { JSX } from "react";
 
-const componentMap = {
+type Block =
+  | { type: "DemoCard"; props: React.ComponentProps<typeof DemoCard> }
+  | { type: "CodeExplanation"; props: React.ComponentProps<typeof CodeExplanation>;}
+  | { type: "CodeCard"; props: React.ComponentProps<typeof CodeCard> }
+  | { type: "OutPutCard"; props: React.ComponentProps<typeof OutPutCard> }
+  | { type: "Note"; props: React.ComponentProps<typeof Note> }
+  | { type: "Tip"; props: React.ComponentProps<typeof Tip> };
+
+const componentMap:Record<Block["type"], (prop: any)=> JSX.Element> = {
   DemoCard: (props) => <DemoCard {...props} />,
   CodeExplanation: (props) => <CodeExplanation {...props} />,
   CodeCard: (props) => <CodeCard {...props} />,
   OutPutCard: (props) => <OutPutCard {...props} />,
   Note: (props) => <Note {...props} />,
   Tip: (props) => <Tip {...props} />,
-}
+};
 
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const slug = await params.slug;
@@ -49,23 +58,14 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
           desc={post.description}
           date={post.date}
         />
-        {
-          post.content.map((block, index)=>{
-            const Component = componentMap[block.type];
-            if(!Component) return null;
-            return <div key={index}>{Component(block.props)}</div>
-          })
-        }
-        {/* <DemoCard />
-        <CodeExplanation />
-        <CodeCard />
-        <OutPutCard />
-        <Note />
-        <Tip /> */}
+        {(post.content as Block[]).map((block, index) => {
+          const Component = componentMap[block.type];
+          return <div key={index}>{Component(block.props)}</div>;
+        })}
       </div>
       <div className="pt-12 md:pt-16 lg:pt-24 px-5 md:px-7 ">
         <h1 className="text-2xl mb-5">Related Animations</h1>
-        <div className="flex flex-col md:flex-row items-center justify-between ">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5 ">
           {array.map((item) => (
             <BlogCard key={item} />
           ))}

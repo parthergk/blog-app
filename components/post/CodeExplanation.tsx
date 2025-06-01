@@ -1,6 +1,10 @@
 import React from "react";
-
-const CodeExplanation = ({heading, explanation, list}) => {
+interface Props {
+  heading: string;
+  explanation: string;
+  list: string[];
+}
+const CodeExplanation:React.FC<Props> = ({heading, explanation, list}) => {
   return (
     <div className=" mt-10">
 {heading && <h2 className="text-2xl">{heading}</h2>}

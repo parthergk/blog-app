@@ -3,7 +3,11 @@ import { Copy, CopyCheck } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import CodeBlock from "../post/CodeBlock";
 
-const CodeCard = ({path, code}) => {
+interface Props{
+  path:string;
+  code: string;
+}
+const CodeCard:React.FC<Props> = ({path, code}) => {
   const [isCopy, setIsCopy] = useState(false);
   const timeoutRef = useRef<null | NodeJS.Timeout>(null);
 

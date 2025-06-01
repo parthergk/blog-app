@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Note = ({text}) => {
+const Note = ({text}:{text:string}) => {
   return (
     <div className="bg-[#dcdcdc] p-4 mt-8 rounded dark:bg-neutral-800">
         <h3 className="text-sm sm:text-base font-semibold mb-1 ">Note</h3>
