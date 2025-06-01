@@ -14,7 +14,7 @@ export const posts = [
         type: "DemoCard",
         props: {
           title: "Text Parallax Demo",
-          previewUrl: "/img/post.png", //instead of image use video for demo
+          previewUrl: "/img/post.png",
           links: [
             { label: "Live Demo", url: "/demo/text-parallax" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -46,7 +46,7 @@ export const posts = [
       {
         type: "CodeCard",
         props: {
-          path: " components/page-transition.tsx",
+          path: "components/page-transition.tsx",
           code: `useEffect(() => {
   const lenis = new Lenis()
 
@@ -58,6 +58,37 @@ export const posts = [
   requestAnimationFrame(raf)
 }, [])`,
           language: "tsx",
+        },
+      },
+      {
+        type: "Note",
+        props: {
+          text: "Framer Motion's scroll hooks work best with container elements.",
+        },
+      },
+      {
+        type: "OutPutCard",
+        props: {
+          alt: "Preview of scrolling text",
+          img: "/img/post.png",
+        },
+      },
+      {
+        type: "CodeExplanation",
+        props: {
+          heading: "Card Flip CSS Logic",
+          explanation:
+            "We use `transform: rotateY(180deg)` and `backface-visibility: hidden` to create the 3D flip effect.",
+        },
+      },
+      {
+        type: "CodeCard",
+        props: {
+          path: "components/FlipCard.css",
+          code: `.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}`,
+          language: "css",
         },
       },
       {
@@ -97,11 +128,6 @@ export const posts = [
         props: {
           title: "Glassmorphism Card Demo",
           previewUrl: "/video/glassmorphism.mp4",
-        },
-      },
-      {
-        type: "LinkBlock",
-        props: {
           links: [
             { label: "Live Demo", url: "/demo/glass-cards" },
             { label: "Source Code", url: "https://github.com/..." },
@@ -148,6 +174,10 @@ export const posts = [
         props: {
           title: "Hover Reveal Demo",
           previewUrl: "/video/hover-reveal.mp4",
+          links: [
+            { label: "Live Demo", url: "/demo/hover-reveal" },
+            { label: "Source Code", url: "https://github.com/..." },
+          ],
         },
       },
       {
@@ -190,105 +220,113 @@ export const posts = [
         props: {
           title: "Typing Effect Demo",
           previewUrl: "/video/typing-effect.mp4",
+          links: [
+            { label: "Live Demo", url: "/demo/typing-text" },
+            { label: "Source Code", url: "https://github.com/..." },
+          ],
+        },
+      },
+      {
+        type: "CodeExplanation",
+        props: {
+          heading: "Typing Animation Logic",
+          explanation:
+            "We use `setTimeout` to display each character in sequence, creating a typing effect.",
         },
       },
       {
         type: "CodeCard",
         props: {
-          path: "utils/typingEffect.js",
-          code: `function typeText(el, text, speed = 100) {
-  let i = 0;
-  const interval = setInterval(() => {
-    el.textContent += text[i];
-    i++;
-    if (i >= text.length) clearInterval(interval);
-  }, speed);
-}`,
-          language: "js",
-        },
-      },
-      {
-        type: "Note",
-        props: {
-          text: "Use `setTimeout` instead of `setInterval` for more control over complex sequences.",
+          path: "components/TypingEffect.tsx",
+          code: `const typing = (text, index = 0) => {
+  if (index < text.length) {
+    document.getElementById("typed").innerHTML += text.charAt(index);
+    setTimeout(() => typing(text, index + 1), 100);
+  }
+};`,
+          language: "tsx",
         },
       },
     ],
   },
   {
-    id: "sticky-navbar-tailwind",
-    slug: "sticky-navbar-tailwind",
-    title: "Building a Sticky Navigation Bar with Tailwind CSS",
-    date: "April 21, 2025",
+    id: "scroll-based-progress",
+    slug: "scroll-based-progress",
+    title: "Building a Scroll-Based Progress Bar in React",
+    date: "April 20, 2025",
     author: "Gaurav Kumar",
     description:
-      "Sticky navbars are essential for improving UX, especially in long-scroll websites. Learn how to build a responsive sticky navbar using just Tailwind classes.",
-    tags: ["tailwind", "navbar", "responsive"],
+      "Learn how to create a scroll indicator at the top of the page that tracks user progress using React hooks and a bit of CSS.",
+    tags: ["react", "scroll", "progress-bar"],
     img: "/img/post.png",
     content: [
       {
         type: "DemoCard",
         props: {
-          title: "Sticky Navbar Demo",
-          previewUrl: "/video/sticky-navbar.mp4",
+          title: "Scroll Progress Bar Demo",
+          previewUrl: "/video/scroll-progress.mp4",
+          links: [
+            { label: "Live Demo", url: "/demo/scroll-progress" },
+            { label: "Source Code", url: "https://github.com/..." },
+          ],
+        },
+      },
+      {
+        type: "CodeExplanation",
+        props: {
+          heading: "Tracking Scroll Progress",
+          explanation:
+            "Use `window.scrollY` and `document.body.scrollHeight` to calculate scroll progress percentage.",
         },
       },
       {
         type: "CodeCard",
         props: {
-          path: "components/Navbar.tsx",
-          code: `<nav className="sticky top-0 bg-white z-50 shadow-md p-4">...</nav>`,
+          path: "components/ScrollProgress.tsx",
+          code: `const progress = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;`,
           language: "tsx",
-        },
-      },
-      {
-        type: "Tip",
-        props: {
-          text: "Use `z-50` and `shadow-md` to ensure visibility above other components.",
         },
       },
     ],
   },
   {
-    id: "custom-scrollbar-styling",
-    slug: "custom-scrollbar-styling",
-    title: "Styling Scrollbars with Tailwind CSS and CSS Variables",
+    id: "card-flip-on-hover",
+    slug: "card-flip-on-hover",
+    title: "Card Flip Animation on Hover Using Tailwind and CSS",
     date: "April 25, 2025",
     author: "Gaurav Kumar",
     description:
-      "Default scrollbars can look outdated. This guide shows how to create modern, minimal scrollbar styles using Tailwind and CSS variables.",
-    tags: ["tailwind", "scrollbar", "css"],
+      "Card flip animations are popular for interactive portfolios and product showcases. Here’s how to implement one using Tailwind CSS and plain CSS.",
+    tags: ["css", "animation", "tailwind"],
     img: "/img/post.png",
     content: [
       {
+        type: "DemoCard",
+        props: {
+          title: "Flip Card Demo",
+          previewUrl: "/video/flip-card.mp4",
+          links: [
+            { label: "Live Demo", url: "/demo/flip-card" },
+            { label: "Source Code", url: "https://github.com/..." },
+          ],
+        },
+      },
+      {
         type: "CodeExplanation",
         props: {
-          heading: "Using Custom Scrollbar Styles",
+          heading: "Card Flip CSS Logic",
           explanation:
-            "We use pseudo-elements `::-webkit-scrollbar` and set custom widths, colors, and shadows.",
+            "We use `transform: rotateY(180deg)` and `backface-visibility: hidden` to create the 3D flip effect.",
         },
       },
       {
         type: "CodeCard",
         props: {
-          path: "styles/global.css",
-          code: `::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+          path: "components/FlipCard.css",
+          code: `.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }`,
           language: "css",
-        },
-      },
-      {
-        type: "Note",
-        props: {
-          text: "These styles work in WebKit-based browsers like Chrome and Safari.",
         },
       },
     ],
