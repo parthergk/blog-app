@@ -10,6 +10,8 @@ export const posts = [
     tags: ["framer-motion", "parallax", "scroll"],
     img: "/img/post.png",
     videoUrl: "/img/videoBg.mov",
+    isFeatured: true,
+    type: "Animation",
     content: [
       {
         type: "DemoCard",
@@ -123,7 +125,9 @@ export const posts = [
       "Glassmorphism creates a beautiful frosted glass look that's trending in modern UI design. In this tutorial, you'll learn how to create reusable glassmorphism card components using Tailwind CSS.",
     tags: ["tailwind", "glassmorphism", "ui"],
     img: "/img/post.png",
-        videoUrl: "/img/videoBg.mov",
+    videoUrl: "/img/videoBg.mov",
+    isFeatured: false,
+    type: "Scroll",
     content: [
       {
         type: "DemoCard",
@@ -170,7 +174,9 @@ export const posts = [
       "Hover effects bring interactivity to UI components. This post shows how to create a modern reveal animation on hover using Tailwind and Framer Motion.",
     tags: ["framer-motion", "tailwind", "hover-effect"],
     img: "/img/post.png",
-            videoUrl: "/img/videoBg.mov",
+    videoUrl: "/img/videoBg.mov",
+    isFeatured: false,
+    type: "Animation",
     content: [
       {
         type: "DemoCard",
@@ -217,7 +223,9 @@ export const posts = [
       "Typing effects can bring life to headers and hero sections. Learn how to implement a customizable typing animation with vanilla JavaScript and Tailwind CSS.",
     tags: ["javascript", "animation", "typing-effect"],
     img: "/img/post.png",
-            videoUrl: "/img/videoBg.mov",
+    videoUrl: "/img/videoBg.mov",
+    isFeatured: false,
+    type: "Hover",
     content: [
       {
         type: "DemoCard",
@@ -263,7 +271,9 @@ export const posts = [
       "Learn how to create a scroll indicator at the top of the page that tracks user progress using React hooks and a bit of CSS.",
     tags: ["react", "scroll", "progress-bar"],
     img: "/img/post.png",
-            videoUrl: "/img/videoBg.mov",
+    videoUrl: "/img/videoBg.mov",
+    isFeatured: false,
+    type: "Mouse",
     content: [
       {
         type: "DemoCard",
@@ -304,7 +314,9 @@ export const posts = [
       "Card flip animations are popular for interactive portfolios and product showcases. Here’s how to implement one using Tailwind CSS and plain CSS.",
     tags: ["css", "animation", "tailwind"],
     img: "/img/post.png",
-            videoUrl: "/img/videoBg.mov",
+    videoUrl: "/img/videoBg.mov",
+    isFeatured: false,
+    type: "Scroll",
     content: [
       {
         type: "DemoCard",
