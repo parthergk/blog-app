@@ -63,7 +63,6 @@ export const posts = [
       {
         type: "OutPutCard",
         props: {
-          output: "We should have something like this.",
           alt: "Preview of scrolling text",
           img: "/img/post.png",
         },

@@ -1,6 +1,6 @@
 import React from "react";
 
-const OutPutCard = () => {
+const OutPutCard = ({alt, img}) => {
   return (
     <div className=" mt-10">
       {" "}
