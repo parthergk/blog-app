@@ -17,6 +17,7 @@ const DemoCard:React.FC<Props> = ({ previewUrl, links }) => {
             autoPlay
             loop
             playsInline
+            preload="metadata"
           />
       </div>
 

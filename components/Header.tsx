@@ -8,7 +8,6 @@ const Header = () => {
 
   useEffect(()=>{
     const savedTheme = localStorage.getItem("theme");
-    console.log("savedThem", savedTheme);
     if (savedTheme === "light") {
       setTheme("light");
     }else{

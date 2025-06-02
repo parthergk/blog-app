@@ -68,6 +68,7 @@ const FeatureBlog = () => {
               autoPlay
               loop
               playsInline
+              preload="metadata"
               className={`w-full h-full object-cover ${isImg ? "hidden" : "block"}`}
             />
           </div>

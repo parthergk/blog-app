@@ -35,10 +35,7 @@ const TypeCard: React.FC<Prop> = ({
 }) => {
   const handleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
-  };
-
-  console.log("blogs", blogs);
-  
+  };  
 
   return (
     <div className="w-full border-b border-neutral-700 pb-4 mb-6 pr-3">

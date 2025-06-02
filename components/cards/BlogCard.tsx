@@ -40,7 +40,9 @@ const BlogCard: React.FC<Prop> = ({videoUrl, slug, img, title, desc, date }) => 
             autoPlay
             loop
             playsInline
+            preload="metadata"
           />
+
         </div>
         <div className=" w-full flex flex-col gap-5">
           <div className=" w-full h-1 bg-neutral-800 dark:bg-white"></div>
