@@ -1,0 +1,107 @@
+{
+    "id": "modern-css-features",
+    "slug": "modern-css-features",
+    "title": "Modern CSS Features: Container Queries and Beyond",
+    "date": "May 13, 2025",
+    "author": "Gaurav Kumar",
+    "description": "Explore cutting-edge CSS features that are reshaping web design. Learn about container queries, CSS cascade layers, color functions, and other modern CSS capabilities that enable more responsive and maintainable stylesheets.",
+    "tags": ["css", "modern-features", "container-queries"],
+    "img": "/img/post.png",
+    "videoUrl": "/img/videoBg.mov",
+    "isFeatured": false,
+    "type": "CSS",
+    "seo": {
+      "title": "Modern CSS Features 2025 – Container Queries and Beyond",
+      "description": "Master modern CSS features including container queries, cascade layers, and advanced color functions for better web design.",
+      "keywords": ["Modern CSS", "Container queries", "CSS cascade layers", "Web design"],
+      "image": "/img/post.png"
+    },
+    "content": [
+      {
+        "type": "DemoCard",
+        "props": {
+          "title": "Modern CSS Features Demo",
+          "previewUrl": "/img/videoBg.mov",
+          "links": [
+            { "label": "Live Demo", "url": "/demo/modern-css" },
+            { "label": "Source Code", "url": "https://github.com/..." }
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Container Queries Revolution",
+          "explanation": "Container queries allow components to adapt based on their container's size rather than the viewport, enabling true component-based responsive design.",
+          "list": [
+            "Size-based responsive components",
+            "Independent of viewport dimensions",
+            "Better component encapsulation",
+            "More predictable responsive behavior"
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Implementing Container Queries",
+          "explanation": "Set up container queries to create truly responsive components."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "styles/container-queries.css",
+          "code": ".card-container {\n  container-type: inline-size;\n  container-name: card;\n}\n\n.card {\n  padding: 1rem;\n  background: white;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n}\n\n/* Container query - when container is wider than 300px */\n@container card (min-width: 300px) {\n  .card {\n    display: flex;\n    gap: 1rem;\n  }\n  \n  .card-content {\n    flex: 1;\n  }\n  \n  .card-image {\n    width: 120px;\n    height: 120px;\n  }\n}\n\n/* Container query - when container is wider than 500px */\n@container card (min-width: 500px) {\n  .card {\n    padding: 2rem;\n  }\n  \n  .card-title {\n    font-size: 1.5rem;\n  }\n}",
+          "language": "css"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Container queries require setting container-type on the parent element."
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Container queries responsive design",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "CSS Cascade Layers",
+          "explanation": "Cascade layers provide explicit control over CSS specificity and cascade order."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "styles/cascade-layers.css",
+          "code": "/* Define layer order */\n@layer reset, base, components, utilities;\n\n/* Reset layer */\n@layer reset {\n  * {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n  }\n}\n\n/* Base layer */\n@layer base {\n  body {\n    font-family: system-ui, sans-serif;\n    line-height: 1.6;\n    color: #333;\n  }\n  \n  h1, h2, h3 {\n    font-weight: 700;\n    margin-bottom: 0.5em;\n  }\n}\n\n/* Components layer */\n@layer components {\n  .btn {\n    display: inline-block;\n    padding: 0.5rem 1rem;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n    transition: all 0.2s;\n  }\n  \n  .btn-primary {\n    background: #007bff;\n    color: white;\n  }\n}\n\n/* Utilities layer */\n@layer utilities {\n  .text-center { text-align: center; }\n  .mt-4 { margin-top: 1rem; }\n  .hidden { display: none; }\n}",
+          "language": "css"
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "CSS cascade layers example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Cascade layers solve specificity wars and make CSS more maintainable."
+        }
+      },
+      {
+        "type": "Tip",
+        "props": {
+          "text": "Use :has() selector for parent-based styling and logical property names for better internationalization."
+        }
+      }
+    ]
+  }

@@ -1,4 +1,4 @@
-import BlogType from "@/components/BlogType";
+import BlogTypeWrapper from "@/components/BlogTypeWrapper";
 import FeatureBlog from "@/components/FeatureBlog";
 import Hero from "@/components/Hero";
 import LatestBlog from "@/components/LatestBlog";
@@ -84,7 +84,7 @@ const page = () => {
       <FeatureBlog />
       <div className=" w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700"> </div>
       <LatestBlog />
-      <BlogType />
+      <BlogTypeWrapper/>
       <div className="my-12 md:my-16 lg:my-24 w-full h-60 bg-[#c0c0c0] dark:bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
         <div className=" flex flex-col justify-center items-center gap-5">
           <div className=" rounded-2xl py-1 px-2 border border-neutral-400 dark:border-neutral-500 text-base ">

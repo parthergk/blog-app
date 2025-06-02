@@ -1,8 +1,9 @@
 import React from "react";
 import BlogCard from "./cards/BlogCard";
-import { posts } from "@/data/posts";
+import { getAllPosts } from "@/lib/blog";
 
 const LatestBlog = () => {
+  const posts = getAllPosts();
   return (
     <div className="py-12 md:py-16 lg:py-24 px-5 md:px-7">
       <div className=" mb-12 sm:mb-16 md:mb-20 lg:mb-24">

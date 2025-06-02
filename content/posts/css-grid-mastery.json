@@ -1,0 +1,107 @@
+{
+    "id": "css-grid-mastery",
+    "slug": "css-grid-mastery",
+    "title": "CSS Grid Layout: From Basics to Advanced Techniques",
+    "date": "April 22, 2025",
+    "author": "Gaurav Kumar",
+    "description": "CSS Grid is the most powerful layout system available in CSS. Master grid layouts with practical examples, responsive design patterns, and advanced techniques that will transform your web development workflow.",
+    "tags": ["css", "grid", "layout"],
+    "img": "/img/post.png",
+    "videoUrl": "/img/videoBg.mov",
+    "isFeatured": true,
+    "type": "CSS",
+    "seo": {
+      "title": "CSS Grid Mastery – Complete Layout Guide 2025",
+      "description": "Master CSS Grid with practical examples. Learn responsive layouts, grid areas, and advanced techniques for modern web design.",
+      "keywords": ["CSS Grid", "Layout", "Responsive design", "Web development"],
+      "image": "/img/post.png"
+    },
+    "content": [
+      {
+        "type": "DemoCard",
+        "props": {
+          "title": "CSS Grid Layout Demo",
+          "previewUrl": "/img/videoBg.mov",
+          "links": [
+            { "label": "Live Demo", "url": "/demo/css-grid" },
+            { "label": "Source Code", "url": "https://github.com/..." }
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Grid Fundamentals",
+          "explanation": "CSS Grid creates a two-dimensional layout system, allowing you to work with both rows and columns simultaneously. Unlike Flexbox, which is one-dimensional, Grid excels at complex layouts.",
+          "list": [
+            "Two-dimensional layout control",
+            "Explicit placement of items",
+            "Responsive without media queries",
+            "Overlapping elements support"
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Basic Grid Setup",
+          "explanation": "Start with defining a grid container and establishing your grid tracks."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "styles/grid-layout.css",
+          "code": ".grid-container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: auto;\n  gap: 20px;\n  padding: 20px;\n}\n\n.grid-item {\n  background: #f0f0f0;\n  padding: 20px;\n  border-radius: 8px;\n}",
+          "language": "css"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "fr units represent fractional units that distribute available space proportionally."
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Basic CSS Grid layout",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Grid Areas and Named Lines",
+          "explanation": "Use grid-template-areas for intuitive layout design and named grid lines for precise control."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "styles/grid-areas.css",
+          "code": ".layout {\n  display: grid;\n  grid-template-areas:\n    \"header header header\"\n    \"sidebar main main\"\n    \"footer footer footer\";\n  grid-template-columns: 200px 1fr 1fr;\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n}\n\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }\n.main { grid-area: main; }\n.footer { grid-area: footer; }",
+          "language": "css"
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Grid areas layout example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Grid areas make complex layouts readable and maintainable."
+        }
+      },
+      {
+        "type": "Tip",
+        "props": {
+          "text": "Use grid-auto-fit and minmax() for responsive layouts without media queries."
+        }
+      }
+    ]
+  }

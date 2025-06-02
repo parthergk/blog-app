@@ -1,0 +1,107 @@
+{
+    "id": "typescript-advanced-patterns",
+    "slug": "typescript-advanced-patterns",
+    "title": "Advanced TypeScript Patterns for React Developers",
+    "date": "April 29, 2025",
+    "author": "Gaurav Kumar",
+    "description": "Take your TypeScript skills to the next level with advanced patterns, utility types, and techniques specifically designed for React development. Learn conditional types, mapped types, and how to create type-safe React components.",
+    "tags": ["typescript", "react", "patterns"],
+    "img": "/img/post.png",
+    "videoUrl": "/img/videoBg.mov",
+    "isFeatured": false,
+    "type": "TypeScript",
+    "seo": {
+      "title": "Advanced TypeScript Patterns for React – 2025 Guide",
+      "description": "Master advanced TypeScript patterns for React development. Learn utility types, conditional types, and type-safe component patterns.",
+      "keywords": ["TypeScript", "React", "Advanced patterns", "Type safety"],
+      "image": "/img/post.png"
+    },
+    "content": [
+      {
+        "type": "DemoCard",
+        "props": {
+          "title": "TypeScript Patterns Demo",
+          "previewUrl": "/img/videoBg.mov",
+          "links": [
+            { "label": "Live Demo", "url": "/demo/typescript-patterns" },
+            { "label": "Source Code", "url": "https://github.com/..." }
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Generic Component Patterns",
+          "explanation": "Create reusable, type-safe React components using TypeScript generics. This approach ensures type safety while maintaining flexibility.",
+          "list": [
+            "Type-safe props with generics",
+            "Conditional rendering based on types",
+            "Polymorphic component patterns",
+            "Advanced prop validation"
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Generic List Component",
+          "explanation": "Here's how to create a generic list component that works with any data type."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "components/GenericList.tsx",
+          "code": "interface ListProps<T> {\n  items: T[]\n  renderItem: (item: T, index: number) => React.ReactNode\n  keyExtractor: (item: T) => string | number\n  emptyMessage?: string\n}\n\nexport function List<T>({\n  items,\n  renderItem,\n  keyExtractor,\n  emptyMessage = 'No items found'\n}: ListProps<T>) {\n  if (items.length === 0) {\n    return <div className=\"text-gray-500\">{emptyMessage}</div>\n  }\n\n  return (\n    <ul className=\"space-y-2\">\n      {items.map((item, index) => (\n        <li key={keyExtractor(item)}>\n          {renderItem(item, index)}\n        </li>\n      ))}\n    </ul>\n  )\n}",
+          "language": "tsx"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Generic components provide type safety while remaining flexible and reusable."
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Generic component example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Conditional Types and Utility Types",
+          "explanation": "Use conditional types to create sophisticated type transformations and utility types."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "types/utils.ts",
+          "code": "// Conditional type for API responses\ntype ApiResponse<T> = T extends string\n  ? { message: T }\n  : T extends object\n  ? { data: T }\n  : { value: T }\n\n// Utility type for form fields\ntype FormFields<T> = {\n  [K in keyof T]: {\n    value: T[K]\n    error?: string\n    touched?: boolean\n  }\n}\n\n// Usage example\ninterface User {\n  name: string\n  email: string\n  age: number\n}\n\ntype UserForm = FormFields<User>\n// Result: {\n//   name: { value: string, error?: string, touched?: boolean }\n//   email: { value: string, error?: string, touched?: boolean }\n//   age: { value: number, error?: string, touched?: boolean }\n// }",
+          "language": "typescript"
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Utility types example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Conditional types enable powerful type transformations based on type conditions."
+        }
+      },
+      {
+        "type": "Tip",
+        "props": {
+          "text": "Use mapped types to transform existing types while maintaining type relationships."
+        }
+      }
+    ]
+  }

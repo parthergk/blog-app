@@ -1,0 +1,107 @@
+{
+    "id": "react-server-components-guide",
+    "slug": "react-server-components-guide",
+    "title": "Mastering React Server Components in Next.js 15",
+    "date": "April 15, 2025",
+    "author": "Gaurav Kumar",
+    "description": "React Server Components revolutionize how we build React applications by enabling server-side rendering with zero client-side JavaScript. Learn how to leverage RSCs to build faster, more efficient web applications with better SEO and performance.",
+    "tags": ["react", "server-components", "nextjs"],
+    "img": "/img/post.png",
+    "videoUrl": "/img/videoBg.mov",
+    "isFeatured": false,
+    "type": "React",
+    "seo": {
+      "title": "React Server Components Guide – Next.js 15 Tutorial",
+      "description": "Complete guide to React Server Components in Next.js 15. Learn RSC patterns, data fetching, and performance optimization.",
+      "keywords": ["React Server Components", "Next.js 15", "RSC", "Server-side rendering"],
+      "image": "/img/post.png"
+    },
+    "content": [
+      {
+        "type": "DemoCard",
+        "props": {
+          "title": "Server Components Demo",
+          "previewUrl": "/img/videoBg.mov",
+          "links": [
+            { "label": "Live Demo", "url": "/demo/server-components" },
+            { "label": "Source Code", "url": "https://github.com/..." }
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Understanding Server Components",
+          "explanation": "React Server Components allow you to render components on the server, reducing bundle size and improving performance. They run on the server and never hydrate on the client.",
+          "list": [
+            "Zero JavaScript sent to the client for server components",
+            "Direct access to server-side resources like databases",
+            "Improved performance and SEO",
+            "Seamless integration with client components"
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Setting Up Server Components",
+          "explanation": "Server components are the default in Next.js 13+ app directory. Here's how to create your first server component."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "app/posts/page.tsx",
+          "code": "// This is a Server Component by default\nexport default async function PostsPage() {\n  const posts = await fetch('https://api.example.com/posts')\n  const data = await posts.json()\n\n  return (\n    <div>\n      {data.map(post => (\n        <article key={post.id}>\n          <h2>{post.title}</h2>\n          <p>{post.excerpt}</p>\n        </article>\n      ))}\n    </div>\n  )\n}",
+          "language": "tsx"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Server Components can't use browser-only APIs like useState or useEffect."
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Server component rendering example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Client Component Boundaries",
+          "explanation": "Use 'use client' directive to create client components when you need interactivity or browser APIs."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "components/LikeButton.tsx",
+          "code": "'use client'\n\nimport { useState } from 'react'\n\nexport default function LikeButton({ postId }: { postId: string }) {\n  const [liked, setLiked] = useState(false)\n\n  return (\n    <button \n      onClick={() => setLiked(!liked)}\n      className={liked ? 'text-red-500' : 'text-gray-500'}\n    >\n      {liked ? '❤️' : '🤍'} Like\n    </button>\n  )\n}",
+          "language": "tsx"
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Client component example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Keep client components small and focused on interactivity."
+        }
+      },
+      {
+        "type": "Tip",
+        "props": {
+          "text": "Use server components for data fetching and client components for user interactions."
+        }
+      }
+    ]
+  }

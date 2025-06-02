@@ -1,9 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import TypeCard from "./cards/TypeCard";
-import { posts } from "@/data/posts";
-
-export interface Blog {
+interface Blog {
   id: string;
   slug: string;
   title: string;
@@ -17,17 +15,22 @@ export interface Blog {
   videoUrl: string;
 }
 
-const BlogType: React.FC = () => {
+interface Props {
+  posts: Blog[];
+}
+
+const BlogTypeClient: React.FC<Props> = ({ posts }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const blogByTypes = useMemo(()=>{
-    return posts.reduce<Record<string, Blog[]>>((acc, blog) => {      
-    if (!acc[blog.type]) {
-      acc[blog.type] = [];
-    }
-    acc[blog.type].push(blog);
-    return acc;
-  }, {})}, []); 
+  const blogByTypes = useMemo(() => {
+    return posts.reduce<Record<string, Blog[]>>((acc, blog) => {
+      if (!acc[blog.type]) {
+        acc[blog.type] = [];
+      }
+      acc[blog.type].push(blog);
+      return acc;
+    }, {});
+  }, [posts]);
 
   return (
     <div className="py-12 md:py-16 lg:py-24 px-5 md:px-7">
@@ -52,4 +55,4 @@ const BlogType: React.FC = () => {
   );
 };
 
-export default BlogType;
+export default BlogTypeClient;

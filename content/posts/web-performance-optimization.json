@@ -1,0 +1,107 @@
+ {
+    "id": "web-performance-optimization",
+    "slug": "web-performance-optimization",
+    "title": "Web Performance Optimization: Core Web Vitals Guide",
+    "date": "May 6, 2025",
+    "author": "Gaurav Kumar",
+    "description": "Master web performance optimization with a focus on Core Web Vitals. Learn practical techniques to improve LCP, FID, and CLS scores, implement lazy loading, optimize images, and create lightning-fast web experiences.",
+    "tags": ["performance", "web-vitals", "optimization"],
+    "img": "/img/post.png",
+    "videoUrl": "/img/videoBg.mov",
+    "isFeatured": true,
+    "type": "Performance",
+    "seo": {
+      "title": "Web Performance Optimization – Core Web Vitals Guide 2025",
+      "description": "Complete guide to web performance optimization. Master Core Web Vitals, image optimization, and performance monitoring techniques.",
+      "keywords": ["Web performance", "Core Web Vitals", "LCP", "FID", "CLS"],
+      "image": "/img/post.png"
+    },
+    "content": [
+      {
+        "type": "DemoCard",
+        "props": {
+          "title": "Performance Optimization Demo",
+          "previewUrl": "/img/videoBg.mov",
+          "links": [
+            { "label": "Live Demo", "url": "/demo/performance" },
+            { "label": "Source Code", "url": "https://github.com/..." }
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Understanding Core Web Vitals",
+          "explanation": "Core Web Vitals are essential metrics that measure real-world user experience. They focus on loading performance, interactivity, and visual stability.",
+          "list": [
+            "LCP (Largest Contentful Paint) - Loading performance",
+            "FID (First Input Delay) - Interactivity responsiveness",
+            "CLS (Cumulative Layout Shift) - Visual stability",
+            "Direct impact on SEO and user experience"
+          ]
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Image Optimization Techniques",
+          "explanation": "Optimizing images is crucial for improving LCP scores and overall page performance."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "components/OptimizedImage.tsx",
+          "code": "import Image from 'next/image'\n\ninterface OptimizedImageProps {\n  src: string\n  alt: string\n  width: number\n  height: number\n  priority?: boolean\n}\n\nexport function OptimizedImage({\n  src,\n  alt,\n  width,\n  height,\n  priority = false\n}: OptimizedImageProps) {\n  return (\n    <Image\n      src={src}\n      alt={alt}\n      width={width}\n      height={height}\n      priority={priority}\n      placeholder=\"blur\"\n      blurDataURL=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQ...\"\n      sizes=\"(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw\"\n      loading={priority ? 'eager' : 'lazy'}\n    />\n  )\n}",
+          "language": "tsx"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Use priority={true} for above-the-fold images to improve LCP scores."
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Image optimization example",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "CodeExplanation",
+        "props": {
+          "heading": "Measuring Performance",
+          "explanation": "Implement performance monitoring to track Core Web Vitals in real-time."
+        }
+      },
+      {
+        "type": "CodeCard",
+        "props": {
+          "path": "utils/performance.ts",
+          "code": "// Core Web Vitals measurement\nimport { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals'\n\nfunction sendToAnalytics(metric: any) {\n  // Send to your analytics service\n  console.log('Performance metric:', metric)\n}\n\nexport function initPerformanceMonitoring() {\n  getCLS(sendToAnalytics)\n  getFID(sendToAnalytics)\n  getFCP(sendToAnalytics)\n  getLCP(sendToAnalytics)\n  getTTFB(sendToAnalytics)\n}\n\n// Resource loading optimization\nexport function preloadCriticalResources() {\n  const link = document.createElement('link')\n  link.rel = 'preload'\n  link.href = '/critical-font.woff2'\n  link.as = 'font'\n  link.type = 'font/woff2'\n  link.crossOrigin = 'anonymous'\n  document.head.appendChild(link)\n}",
+          "language": "typescript"
+        }
+      },
+      {
+        "type": "OutPutCard",
+        "props": {
+          "alt": "Performance monitoring dashboard",
+          "img": "/img/post.png"
+        }
+      },
+      {
+        "type": "Note",
+        "props": {
+          "text": "Monitor performance continuously to catch regressions early."
+        }
+      },
+      {
+        "type": "Tip",
+        "props": {
+          "text": "Use resource hints like preload, prefetch, and preconnect strategically."
+        }
+      }
+    ]
+  }
