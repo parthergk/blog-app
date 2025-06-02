@@ -66,4 +66,4 @@ const TypeCard: React.FC<Prop> = ({
   );
 };
 
-export default TypeCard;
+export default React.memo(TypeCard);

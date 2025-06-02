@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import TypeCard from "./cards/TypeCard";
 import { posts } from "@/data/posts";
 
@@ -21,13 +21,14 @@ export interface Blog {
 const BlogType: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const blogByTypes = posts.reduce<Record<string, Blog[]>>((acc, blog) => {
+  const blogByTypes = useMemo(()=>{
+    return posts.reduce<Record<string, Blog[]>>((acc, blog) => {      
     if (!acc[blog.type]) {
       acc[blog.type] = [];
     }
     acc[blog.type].push(blog);
     return acc;
-  }, {}); // 🛠 Typed reduce return value
+  }, {})}, []); 
 
   return (
     <div className="py-12 md:py-16 lg:py-24 px-5 md:px-7">
