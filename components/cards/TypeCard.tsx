@@ -14,7 +14,6 @@ export interface Blog {
   isFeatured: boolean;
   img: string;
   videoUrl: string;
-  content: any[];
 }
 
 

@@ -4,6 +4,7 @@ import {
   Linkedin,
   TwitterIcon,
 } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -11,18 +12,18 @@ const Footer = () => {
     <div className="w-full mt-12 md:mt-16 lg:mt-24">
       <div className=" flex flex-col gap-2 sm:flex-row justify-between items-center px-5 py-3 border-t border-neutral-700">
         <div className=" flex justify-center items-center gap-4">
-          <a href="/">
+          <Link href="/">
             <GithubIcon />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <TwitterIcon />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <Linkedin />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <InstagramIcon />
-          </a>
+          </Link>
         </div>
         <div className=" text-lg">Copyright 2025 © Parther</div>
       </div>
