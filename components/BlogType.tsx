@@ -1,10 +1,33 @@
 "use client";
 import React, { useState } from "react";
 import TypeCard from "./cards/TypeCard";
+import { posts } from "@/data/posts";
+
+export interface Blog {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  author: string;
+  description: string;
+  tags: string[];
+  type: string;
+  isFeatured: boolean;
+  img: string;
+  videoUrl: string;
+  content: any[];
+}
 
 const BlogType: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const array = ["Article", "Scroll", "Hover", "Mouse"];
+
+  const blogByTypes = posts.reduce<Record<string, Blog[]>>((acc, blog) => {
+    if (!acc[blog.type]) {
+      acc[blog.type] = [];
+    }
+    acc[blog.type].push(blog);
+    return acc;
+  }, {}); // 🛠 Typed reduce return value
 
   return (
     <div className="py-12 md:py-16 lg:py-24 px-5 md:px-7">
@@ -14,10 +37,11 @@ const BlogType: React.FC = () => {
         </h1>
       </div>
       <div className="w-full">
-        {array.map((item, index) => (
+        {Object.entries(blogByTypes).map(([type, blogs], index) => (
           <TypeCard
-            key={index}
-            name={item}
+            key={type}
+            name={type}
+            blogs={blogs}
             Itemindex={index}
             openIndex={openIndex}
             setOpenIndex={setOpenIndex}
