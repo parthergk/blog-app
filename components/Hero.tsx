@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -15,7 +16,9 @@ const Hero = () => {
             </div>
             <div className=" flex gap-2.5">
               <h1 className="inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                <span className=" text-black/50 dark:text-white">Components</span>
+                <span className=" text-black/50 dark:text-white">
+                  Components
+                </span>
               </h1>
               <h1 className="inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 With
@@ -25,7 +28,8 @@ const Hero = () => {
           <div className=" flex flex-col md:flex-row justify-center items-center gap-2">
             <div className=" flex gap-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-                <span className=" text-black/50 dark:text-white">Tailwind</span> CSS
+                <span className=" text-black/50 dark:text-white">Tailwind</span>{" "}
+                CSS
                 <span className=" inline sm:hidden">,</span>
                 <span className=" hidden sm:inline"> &</span>
               </h1>
@@ -74,12 +78,24 @@ const Hero = () => {
       </div>
 
       <div className=" flex justify-center gap-5 mt-8">
-        <button className="text-lg dark:bg-neutral-900 border border-neutral-500 rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
-          About me
-        </button>
-        <button className="text-lg text-white bg-neutral-900 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
-          Email
-        </button>
+        <Link
+          href="https://parther.in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="text-lg dark:bg-neutral-900 border border-neutral-500 rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
+            About me
+          </button>
+        </Link>
+        <Link
+          href="mailto:gauravkumar81464@gmail.com"
+         target="_blank"
+  rel="noopener noreferrer"
+        >
+          <button className="text-lg text-white bg-neutral-900 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
+            Email
+          </button>
+        </Link>
       </div>
     </div>
   );
