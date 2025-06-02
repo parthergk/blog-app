@@ -28,9 +28,9 @@ const BlogCard: React.FC<Prop> = ({videoUrl, slug, img, title, desc, date }) => 
     }
   }
   return (
-    <div className=" w-full max-w-xl mb-10 " onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <Link href={`/post/${slug}`} className="flex flex-col md:flex-row gap-5">
-        <div className=" relative w-full h-60 min-w-72 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out">
+    <div className=" w-full mb-10 " onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link href={`/post/${slug}`} className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-5">
+        <div className=" relative w-full h-60 bg-neutral-700 hover:scale-105 transition-all duration-300 ease-in-out">
           <Image alt="img" src={img} fill className={` object-contain ${isImg ? 'block': 'hidden'}`} />
           <video
           ref = {videoRef}

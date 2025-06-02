@@ -10,7 +10,7 @@ const LatestBlog = () => {
           Latest Blogs
         </h1>
       </div>
-      <div className=" flex flex-wrap justify-between">
+      <div className=" grid gap-8 md:grid-cols-2">
         {posts.map((post) => (
           <BlogCard  key={post.id} videoUrl={post.videoUrl} slug={post.slug} img={post.img} title={post.title} desc = {post.description} date= {post.date} />
         ))}
