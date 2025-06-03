@@ -12,10 +12,10 @@ const Hero = () => {
               <h1 className=" inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 Creative UI
               </h1>
-              <div className=" inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-600 rotate-12">
+              <div className=" inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-600 rotate-12 cursor-pointer hover:rotate-0 hover:scale-110 transition-all duration-150 ease-in-out hover:shadow-[#df7217]">
                 <Image
                   alt="logo"
-                  src="/img/icon.avif"
+                  src="/img/icon.png"
                   fill
                   sizes="50"
                   className=" object-center object-contain rounded-[5px]"

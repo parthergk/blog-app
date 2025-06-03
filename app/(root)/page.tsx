@@ -2,6 +2,7 @@ import BlogTypeWrapper from "@/components/BlogTypeWrapper";
 import FeatureBlog from "@/components/FeatureBlog";
 import Hero from "@/components/Hero";
 import LatestBlog from "@/components/LatestBlog";
+import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -82,7 +83,10 @@ const page = () => {
       </div>
       <Hero />
       <FeatureBlog />
-      <div className=" w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700"> </div>
+      <div className=" relative w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700">
+        <Image alt="gb" src="/img/bg.jpg" fill />
+    
+      </div>
       <LatestBlog />
       <BlogTypeWrapper/>
       <div className="my-12 md:my-16 lg:my-24 w-full h-60 bg-[#c0c0c0] dark:bg-neutral-700 flex justify-center items-center text-white px-5 md:px-7">
