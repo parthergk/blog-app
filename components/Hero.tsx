@@ -12,7 +12,15 @@ const Hero = () => {
               <h1 className=" inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 Creative UI
               </h1>
-              <div className=" inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-600 rotate-12"></div>{" "}
+              <div className=" inline border-2 border-white w-9 h-[34px] md:w-10 md:h-[38px] lg:w-12 lg:h-[46px] rounded-[5px] shadow-lg shadow-gray-400 dark:shadow-neutral-600 rotate-12">
+                <Image
+                  alt="logo"
+                  src="/img/icon.avif"
+                  fill
+                  sizes="50"
+                  className=" object-center object-contain rounded-[5px]"
+                />
+              </div>{" "}
             </div>
             <div className=" flex gap-2.5">
               <h1 className="inline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
@@ -89,8 +97,8 @@ const Hero = () => {
         </Link>
         <Link
           href="mailto:gauravkumar81464@gmail.com"
-         target="_blank"
-  rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <button className="text-lg text-white bg-neutral-900 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-[5px] px-2 flex justify-center items-center cursor-pointer shadow-neutral-400 dark:shadow-neutral-950 shadow-lg hover:shadow-neutral-500 dark:hover:shadow-neutral-950 hover:scale-105 transition-all duration-150 ease-in-out">
             Email
