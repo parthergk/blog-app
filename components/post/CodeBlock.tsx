@@ -1,8 +1,6 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  dracula,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface Prop {
   codeString: string;
@@ -13,10 +11,9 @@ const CodeBlock: React.FC<Prop> = ({ codeString }) => {
       <SyntaxHighlighter
         language="javascript"
         customStyle={{
-          backgroundColor: "transparent",
           margin: 0,
         }}
-        style={dracula}
+        style={oneDark}
       >
         {codeString}
       </SyntaxHighlighter>
