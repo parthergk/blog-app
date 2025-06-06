@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
-import FeatureBogCard from "./cards/FeatureBogCard";
+import FeatureBogCard from "../cards/FeatureBogCard";
 
 interface Post {
   id: string;

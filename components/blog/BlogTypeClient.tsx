@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import TypeCard from "./cards/TypeCard";
+import TypeCard from "../cards/TypeCard";
+
 interface Blog {
   id: string;
   slug: string;

@@ -1,7 +1,7 @@
-import BlogTypeWrapper from "@/components/BlogTypeWrapper";
-import FeatureBlog from "@/components/FeatureBlog";
-import Hero from "@/components/Hero";
-import LatestBlog from "@/components/LatestBlog";
+import BlogTypeWrapper from "@/components/blog/BlogTypeWrapper";
+import FeatureBlog from "@/components/blog/FeatureBlog";
+import Hero from "@/components/blog/Hero";
+import LatestBlog from "@/components/blog/LatestBlog";
 import Image from "next/image";
 import React from "react";
 

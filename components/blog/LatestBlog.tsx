@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "./cards/BlogCard";
+import BlogCard from "../cards/BlogCard";
 import { getAllPosts } from "@/lib/blog";
 
 const LatestBlog = () => {
