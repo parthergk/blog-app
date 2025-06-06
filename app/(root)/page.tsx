@@ -84,8 +84,7 @@ const page = () => {
       <Hero />
       <FeatureBlog />
       <div className=" relative w-full h-60 my-12 md:my-16 lg:my-24 bg-neutral-700">
-        <Image alt="gb" src="/img/bg.jpg" fill />
-    
+        <Image alt="gb" src="/img/bg.png" fill className=" grayscale cursor-pointer hover:grayscale-0 transition-all duration-300 ease-in" />
       </div>
       <LatestBlog />
       <BlogTypeWrapper/>
