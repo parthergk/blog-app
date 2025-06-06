@@ -11,7 +11,10 @@ import { getAllPosts } from "@/lib/blog";
 
 type Block =
   | { type: "DemoCard"; props: React.ComponentProps<typeof DemoCard> }
-  | { type: "CodeExplanation"; props: React.ComponentProps<typeof CodeExplanation> }
+  | {
+      type: "CodeExplanation";
+      props: React.ComponentProps<typeof CodeExplanation>;
+    }
   | { type: "CodeCard"; props: React.ComponentProps<typeof CodeCard> }
   | { type: "OutPutCard"; props: React.ComponentProps<typeof OutPutCard> }
   | { type: "Note"; props: React.ComponentProps<typeof Note> }
@@ -20,10 +23,11 @@ type Block =
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const posts = getAllPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) return {};
 
@@ -47,9 +51,10 @@ export async function generateMetadata({
   };
 }
 
-const BlogPost = async ({ params }: { params: { slug: string } }) => {
+const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
   const posts = getAllPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return <div className="text-center py-10">Post not found</div>;
 
   const related = posts.slice(0, 2);
@@ -60,20 +65,26 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
         <div
           className="hidden dark:block h-full min-h-screen overflow-hidden absolute top-0 left-0 right-0 z-0 pointer-events-none flex-none order-[1008]"
           style={{
-            WebkitMask: "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
+            WebkitMask:
+              "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
             mask: "linear-gradient(0deg, rgba(0, 0, 0, 0) 7.5%, rgba(0, 0, 0, 1) 86%)",
           }}
         >
           <div
             className="w-full h-full opacity-5"
             style={{
-              backgroundImage: "url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')",
+              backgroundImage:
+                "url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')",
               backgroundSize: "128px",
               backgroundRepeat: "repeat",
             }}
           ></div>
         </div>
-        <PostHeader title={post.title} desc={post.description} date={post.date} />
+        <PostHeader
+          title={post.title}
+          desc={post.description}
+          date={post.date}
+        />
         {(post.content as Block[]).map((block, index) => {
           switch (block.type) {
             case "DemoCard":
