@@ -5,8 +5,6 @@ interface Props{
   links: Array<{url: string, label: string}>
 }
 const DemoCard:React.FC<Props> = ({ previewUrl, links }) => {
-  console.log("video url", previewUrl);
-  
   return (
     <div className=" mt-10">
       <h2 className="text-2xl">See It In Action</h2>

@@ -60,7 +60,7 @@ const FeatureBogCard = ({featureBlog}: {featureBlog?: Post}) => {
             alt="img"
             src={featureBlog.img}
             fill
-            className={`object-contain ${isImg ? "block" : "hidden"}`}
+            className={`object-cover ${isImg ? "block" : "hidden"}`}
           />
           <video
             ref={videoRef}

@@ -6,7 +6,7 @@
   "author": "Gaurav Kumar",
   "description": "Hello and welcome! 👋 I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React.",
   "tags": ["css", "framer-motion", "react"],
-  "img": "/welcome-to-parther-blog/img/Welcome.jpg",
+  "img": "/welcome-to-parther-blog/img/welcome.png",
   "videoUrl": "/welcome-to-parther-blog/video/Welcome.mp4",
   "isFeatured": true,
   "type": "CSS",
@@ -14,7 +14,7 @@
     "title": "Welcome to Parther Blog – A Creative Space for UI Enthusiasts 🚀",
     "description": "Hello and welcome! 👋 I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React.",
     "keywords": ["CSS Grid", "Layout", "Responsive design", "Web development"],
-    "image": "/welcome-to-parther-blog/img/Welcome.jpg"
+    "image": "/welcome-to-parther-blog/img/welcome.png"
   },
   "content": [
     {
@@ -32,7 +32,7 @@
       "type": "CodeExplanation",
       "props": {
         "heading": "Hello and welcome! 👋",
-        "explanation": "I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React. <br/> Whether you’re:",
+        "explanation": "I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React. Whether you’re:",
         "list": [
           "A frontend developer looking for animation ideas 🎞️",
           "A designer curious about how code brings UIs to life 🧠",
