@@ -1,0 +1,88 @@
+{
+  "id": "welcome-to-parther-blog",
+  "slug": "welcome-to-parther-blog",
+  "title": "Welcome to Parther Blog – A Creative Space for UI Enthusiasts 🚀",
+  "date": "June 8, 2025",
+  "author": "Gaurav Kumar",
+  "description": "Hello and welcome! 👋 I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React.",
+  "tags": ["css", "framer-motion", "react"],
+  "img": "/welcome-to-parther-blog/img/Welcome.jpg",
+  "videoUrl": "/welcome-to-parther-blog/video/Welcome.mp4",
+  "isFeatured": true,
+  "type": "CSS",
+  "seo": {
+    "title": "Welcome to Parther Blog – A Creative Space for UI Enthusiasts 🚀",
+    "description": "Hello and welcome! 👋 I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React.",
+    "keywords": ["CSS Grid", "Layout", "Responsive design", "Web development"],
+    "image": "/welcome-to-parther-blog/img/Welcome.jpg"
+  },
+  "content": [
+    {
+      "type": "DemoCard",
+      "props": {
+        "title": "Welcome to Parther Blog",
+        "previewUrl": "/welcome-to-parther-blog/video/Welcome.mp4",
+        "links": [
+          { "label": "Live Demo", "url": "/post/welcome-to-parther-blog" },
+          { "label": "Source Code", "url": "https://github.com/parthergk" }
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Hello and welcome! 👋",
+        "explanation": "I’m Parther, and I’m excited to finally launch this creative space — a blog dedicated to crafting dynamic, modern, and beautiful UI components using tools like Tailwind CSS, Framer Motion, and React. <br/> Whether you’re:",
+        "list": [
+          "A frontend developer looking for animation ideas 🎞️",
+          "A designer curious about how code brings UIs to life 🧠",
+          "Or just someone who loves seeing the creative side of the web 🌈"
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🔧 What You’ll Find Here",
+        "explanation": "Every Saturday, I’ll be publishing:",
+        "list": [
+          "⚙️ Creative UI components with live demos and code breakdowns",
+          "🎨 Tutorials about already built creative components with explanations",
+          "💡 UI/UX tips and micro-interaction techniques",
+          "📦 Developer-focused content that’s practical and reusable"
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "📌 Why I Started This Blog",
+        "explanation": "I’ve always loved combining design with code — building things that don’t just work, but feel alive. With Tailwind and Framer Motion, it became easier than ever to turn creative ideas into polished interfaces. This blog is my way of:",
+        "list": [
+          "✍️ Documenting what I build.",
+          "💬 Sharing it with you.",
+          "🤝 Connecting with other like-minded devs and designers."
+        ]
+      }
+    },
+    {
+      "type": "Note",
+      "props": {
+        "text": "Tailwind's utility-first approach makes it easier to iterate on design and maintain consistency without writing custom CSS."
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🚀 Let’s Build Beautiful Things",
+        "explanation": "Thanks for stopping by! If you're curious, feel free to explore the site, check out the demo components, and don’t forget to come back next Saturday for the next post. 😉 Have thoughts, feedback, or just want to say hi? Hit the Email button on the homepage or connect with me on Twitter/X or LinkedIn."
+      }
+    },
+    {
+      "type": "Tip",
+      "props": {
+        "text": "You can animate Tailwind utility classes with Framer Motion by combining motion.div with className updates."
+      }
+    }
+  ]
+}

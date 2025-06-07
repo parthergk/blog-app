@@ -8,7 +8,7 @@
     "tags": ["performance", "web-vitals", "optimization"],
     "img": "/img/post.png",
     "videoUrl": "/img/videoBg.mov",
-    "isFeatured": true,
+    "isFeatured": false,
     "type": "Performance",
     "seo": {
       "title": "Web Performance Optimization – Core Web Vitals Guide 2025",

@@ -8,7 +8,7 @@
     "tags": ["framer-motion", "parallax", "scroll"],
     "img": "/img/post.png",
     "videoUrl": "/img/videoBg.mov",
-    "isFeatured": true,
+    "isFeatured": false,
     "type": "Animation",
     "seo": {
       "title": "Framer Motion Page Transitions – Smooth Animations in React",

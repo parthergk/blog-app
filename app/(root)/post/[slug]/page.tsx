@@ -55,6 +55,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const posts = getAllPosts();
   const post = posts.find((p) => p.slug === slug);
+  
   if (!post) return <div className="text-center py-10">Post not found</div>;
 
   const related = posts.slice(0, 2);
