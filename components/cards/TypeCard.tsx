@@ -1,4 +1,5 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -43,7 +44,9 @@ const TypeCard: React.FC<Prop> = ({
         onClick={() => handleAccordion(Itemindex)}
       >
         <div className="flex gap-3 justify-center items-center">
-          <div className="w-8 h-8 bg-neutral-700 rounded-[5px] shadow-lg shadow-neutral-600 dark:shadow-neutral-950"></div>
+          <div className=" relative w-8 h-8 bg-neutral-700 rounded-[5px] shadow-lg shadow-neutral-600 dark:shadow-neutral-950">
+          <Image src="/img/tailwind.png" fill alt="css" sizes="32px" className=" rounded-[5px]"/>
+          </div>
           <div className="text-lg sm:text-xl">{name}</div>
         </div>
         <div className="text-lg sm:text-xl">
