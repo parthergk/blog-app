@@ -20,6 +20,11 @@ type Block =
   | { type: "Note"; props: React.ComponentProps<typeof Note> }
   | { type: "Tip"; props: React.ComponentProps<typeof Tip> };
 
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -59,7 +64,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const posts = getAllPosts();
   const post = posts.find((p) => p.slug === slug);
-  
+
   if (!post) return <div className="text-center py-10">Post not found</div>;
 
   const related = posts.slice(0, 2);
