@@ -1,10 +1,10 @@
 {
     "id": "DualThemeToggleSlider",
     "slug": "DualThemeToggleSlider",
-    "title": "Creating Smooth Page Transitions with Framer Motion.",
+    "title": "Recreating a Tailwind CSS Dual Theme Toggle Slider Component Using Tailwind CSS and React",
     "date": "June 14, 2025",
     "author": "Gaurav Kumar",
-    "description": "Page transitions can significantly enhance the user experience of your React application. With Framer Motion, you can create beautiful, physics-based animations with minimal code. In this tutorial, we'll build a smooth page transition effect that you can easily integrate into your Next.js or React projects.",
+    "description": "In this blog post, I’ll walk you through how I recreated the Dual Theme Toggle Slider component featured on the official Tailwind CSS landing page. This interactive UI lets users drag a center divider to seamlessly toggle between light and dark themes — a sleek and modern way to showcase theme variations.",
     "tags": ["framer-motion", "parallax", "scroll"],
     "img": "/DualThemeToggleSlider/img/demo.png",
     "videoUrl": "/DualThemeToggleSlider/video/demo.mp4",

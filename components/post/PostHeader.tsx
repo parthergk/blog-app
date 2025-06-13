@@ -17,7 +17,7 @@ const PostHeader:React.FC<Prop> = ({title, desc, date}) => {
         {date}
       </p>
       {/* description */}
-      <p className="mt-6 text-sm sm:text-base text-black/60 dark:text-white/60">
+      <p className="mt-6 text-sm sm:text-base text-black/60 dark:text-white/60 leading-relaxed tracking-wide">
         {desc}
       </p>
     </div>
