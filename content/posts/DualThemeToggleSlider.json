@@ -1,21 +1,26 @@
 {
-    "id": "DualThemeToggleSlider",
-    "slug": "DualThemeToggleSlider",
-    "title": "Recreating a Tailwind CSS Dual Theme Toggle Slider Component Using Tailwind CSS and React",
-    "date": "June 14, 2025",
-    "author": "Gaurav Kumar",
-    "description": "In this blog post, I’ll walk you through how I recreated the Dual Theme Toggle Slider component featured on the official Tailwind CSS landing page. This interactive UI lets users drag a center divider to seamlessly toggle between light and dark themes — a sleek and modern way to showcase theme variations.",
-    "tags": ["framer-motion", "parallax", "scroll"],
-    "img": "/DualThemeToggleSlider/img/demo.png",
-    "videoUrl": "/DualThemeToggleSlider/video/demo.mp4",
-    "isFeatured": false,
-    "type": "Animation",
-    "seo": {
-      "title": "Framer Motion Page Transitions – Smooth Animations in React",
-      "description": "Learn how to use Framer Motion to create seamless and elegant page transitions in your React projects.",
-      "keywords": ["Framer Motion", "React animation", "Page transitions", "Frontend tips"],
+  "id": "DualThemeToggleSlider",
+  "slug": "DualThemeToggleSlider",
+  "title": "Recreating a Tailwind CSS Dual Theme Toggle Slider Component Using Tailwind CSS and React",
+  "date": "June 14, 2025",
+  "author": "Gaurav Kumar",
+  "description": "In this blog post, I’ll walk you through how I recreated the Dual Theme Toggle Slider component featured on the official Tailwind CSS landing page. This interactive UI lets users drag a center divider to seamlessly toggle between light and dark themes — a sleek and modern way to showcase theme variations.",
+  "tags": ["framer-motion", "parallax", "scroll"],
+  "img": "/DualThemeToggleSlider/img/demo.png",
+  "videoUrl": "/DualThemeToggleSlider/video/demo.mp4",
+  "isFeatured": false,
+  "type": "Animation",
+  "seo": {
+    "title": "Framer Motion Page Transitions – Smooth Animations in React",
+    "description": "Learn how to use Framer Motion to create seamless and elegant page transitions in your React projects.",
+    "keywords": [
+      "Framer Motion",
+      "React animation",
+      "Page transitions",
+      "Frontend tips"
+    ],
     "img": "/DualThemeToggleSlider/img/demo.png"
-    },
+  },
   "content": [
     {
       "type": "DemoCard",
@@ -24,49 +29,74 @@
         "previewUrl": "/DualThemeToggleSlider/video/demo.mp4",
         "links": [
           { "label": "Live Demo", "url": "/demo/DualThemeToggleSlider" },
-          { "label": "Source Code", "url": "https://github.com/parthergk/blog-app/tree/main/components/demos/DualThemeToggleSlider" }
+          {
+            "label": "Source Code",
+            "url": "https://github.com/parthergk/blog-app/tree/main/components/demos/DualThemeToggleSlider"
+          }
         ]
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Understanding Animation Basics",
-        "explanation": "Before diving into the code, let's understand the core concepts of animations in Framer Motion. The library is built around the motion component, which is a wrapper that enables animations for any HTML or SVG element.",
-        "list": [
-          "Access server-only resources (databases, file systems, etc.).",
-          "Keep large dependencies on the server.",
-          "Automatically implement code-splitting.",
-          "Avoid sending unnecessary JavaScript to the client."
-        ]
+        "heading": "Understanding the Component",
+        "explanation": "This component works by layering two images on top of each other — one representing the light theme and one the dark theme. A draggable vertical bar allows users to control how much of the light theme is visible, creating a split-view effect. It gives users an instant feel of both themes in one interaction."
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Setting Up Framer Motion:",
-        "explanation": "First, let's install Framer Motion in your React project."
+        "heading": "Setting Up the Environment:",
+        "explanation": "We are using React and Tailwind CSS for styling. No external UI library is used, but we’ve manually implemented all the logic using basic hooks and DOM events. Make sure your project is set up with:",
+        "list": ["Tailwind CSS", "React (Vite or Create React App)"]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Setting Up Dotted Background Effect :",
+        "explanation": "let’s first create the basic layout of the component. This includes setting up the container with Dotted Background. The dotted effect in the background is generated using a combination of custom CSS variables and Tailwind's arbitrary values for background image and size:"
       }
     },
     {
       "type": "CodeCard",
       "props": {
-        "path": "components/page-transition.tsx",
-        "code": "useEffect(() => {\n  const lenis = new Lenis()\n\n  function raf(time) {\n    lenis.raf(time)\n    requestAnimationFrame(raf)\n  }\n\n  requestAnimationFrame(raf)\n}, [])",
+        "path": "app/index.tsx",
+        "code": "import React from \"react\";\n\nconst index = () => {\n  return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
         "language": "tsx"
       }
     },
     {
-      "type": "Note",
+      "type": "CodeCard",
       "props": {
-        "text": "Framer Motion's scroll hooks work best with container elements."
+        "path": "Example code",
+        "code": "bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] \nbg-[size:10px_10px] \nbg-fixed \n[--pattern-fg:var(--color-white)]/10",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Breakdown:",
+        "list": [
+          "bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] This defines a custom background image using a radial gradient. It draws tiny 1px circular dots using the --pattern-fg color, spaced out with transparency in between.",
+          "bg-[size:10px_10px] Sets the size of each tile in the pattern to 10px × 10px, creating an evenly spaced grid of dots.",
+          "bg-fixed Makes the background fixed to the viewport, so it doesn't scroll with the content, enhancing the subtle visual effect.",
+          "[--pattern-fg:var(--color-white)]/10 Defines a custom CSS variable --pattern-fg using Tailwind's opacity utility /10, which applies 10% opacity to the white color — making the dots soft and less distracting."
+        ]
       }
     },
     {
       "type": "OutPutCard",
       "props": {
         "alt": "Preview of scrolling text",
-        "img": "/DualThemeToggleSlider/img/demo.png"
+        "img": "/DualThemeToggleSlider/img/output/1.png"
+      }
+    },
+    {
+      "type": "Note",
+      "props": {
+        "text": "Framer Motion's scroll hooks work best with container elements."
       }
     },
     {
