@@ -8,7 +8,7 @@ const DemoCard:React.FC<Props> = ({ previewUrl, links }) => {
   return (
     <div className=" mt-10">
       <h2 className="text-2xl">See It In Action</h2>
-      <div className="bg-gray-200 h-64 rounded-lg mt-4">
+      <div className="bg-gray-200 h-80 rounded-lg mt-4">
         <video
             src={previewUrl}
             className="w-full h-full object-cover rounded-lg"

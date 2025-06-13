@@ -1,0 +1,107 @@
+{
+    "id": "DualThemeToggleSlider",
+    "slug": "DualThemeToggleSlider",
+    "title": "Creating Smooth Page Transitions with Framer Motion.",
+    "date": "June 14, 2025",
+    "author": "Gaurav Kumar",
+    "description": "Page transitions can significantly enhance the user experience of your React application. With Framer Motion, you can create beautiful, physics-based animations with minimal code. In this tutorial, we'll build a smooth page transition effect that you can easily integrate into your Next.js or React projects.",
+    "tags": ["framer-motion", "parallax", "scroll"],
+    "img": "/DualThemeToggleSlider/img/demo.png",
+    "videoUrl": "/DualThemeToggleSlider/video/demo.mp4",
+    "isFeatured": false,
+    "type": "Animation",
+    "seo": {
+      "title": "Framer Motion Page Transitions – Smooth Animations in React",
+      "description": "Learn how to use Framer Motion to create seamless and elegant page transitions in your React projects.",
+      "keywords": ["Framer Motion", "React animation", "Page transitions", "Frontend tips"],
+    "img": "/DualThemeToggleSlider/img/demo.png"
+    },
+  "content": [
+    {
+      "type": "DemoCard",
+      "props": {
+        "title": "Text Parallax Demo",
+        "previewUrl": "/DualThemeToggleSlider/video/demo.mp4",
+        "links": [
+          { "label": "Live Demo", "url": "/demo/DualThemeToggleSlider" },
+          { "label": "Source Code", "url": "https://github.com/parthergk/blog-app/tree/main/components/demos/DualThemeToggleSlider" }
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Understanding Animation Basics",
+        "explanation": "Before diving into the code, let's understand the core concepts of animations in Framer Motion. The library is built around the motion component, which is a wrapper that enables animations for any HTML or SVG element.",
+        "list": [
+          "Access server-only resources (databases, file systems, etc.).",
+          "Keep large dependencies on the server.",
+          "Automatically implement code-splitting.",
+          "Avoid sending unnecessary JavaScript to the client."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Setting Up Framer Motion:",
+        "explanation": "First, let's install Framer Motion in your React project."
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "components/page-transition.tsx",
+        "code": "useEffect(() => {\n  const lenis = new Lenis()\n\n  function raf(time) {\n    lenis.raf(time)\n    requestAnimationFrame(raf)\n  }\n\n  requestAnimationFrame(raf)\n}, [])",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "Note",
+      "props": {
+        "text": "Framer Motion's scroll hooks work best with container elements."
+      }
+    },
+    {
+      "type": "OutPutCard",
+      "props": {
+        "alt": "Preview of scrolling text",
+        "img": "/DualThemeToggleSlider/img/demo.png"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Card Flip CSS Logic",
+        "explanation": "We use `transform: rotateY(180deg)` and `backface-visibility: hidden` to create the 3D flip effect."
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "components/FlipCard.css",
+        "code": ".flip-card:hover .flip-card-inner {\n  transform: rotateY(180deg);\n}",
+        "language": "css"
+      }
+    },
+    {
+      "type": "OutPutCard",
+      "props": {
+        "alt": "Preview of scrolling text",
+        "img": "/DualThemeToggleSlider/img/demo.png"
+      }
+    },
+    {
+      "type": "Note",
+      "props": {
+        "text": "Framer Motion's scroll hooks work best with container elements."
+      }
+    },
+    {
+      "type": "Tip",
+      "props": {
+        "text": "Use useTransform to map scroll progress to transform values."
+      }
+    }
+  ]
+}
