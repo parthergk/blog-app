@@ -94,31 +94,33 @@
       }
     },
     {
-      "type": "Note",
-      "props": {
-        "text": "Framer Motion's scroll hooks work best with container elements."
-      }
-    },
-    {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Card Flip CSS Logic",
-        "explanation": "We use `transform: rotateY(180deg)` and `backface-visibility: hidden` to create the 3D flip effect."
+        "heading": "Adding both light and dark theme images:",
+        "explanation": "Setting up the light and dark theme images, and styling the layout using Tailwind CSS to closely match the original design from the Tailwind CSS landing page."
       }
     },
     {
       "type": "CodeCard",
       "props": {
-        "path": "components/FlipCard.css",
-        "code": ".flip-card:hover .flip-card-inner {\n  transform: rotateY(180deg);\n}",
-        "language": "css"
+        "path": "app/index.tsx",
+        "code": "import React from \"react\";\nimport ImageComparison from \"./components/ImageComparison\";\n\nconst index = () => {\n  return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n        <div className=\"w-full overflow-hidden\">\n          <ImageComparison />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "components/ImageComparison.tsx",
+        "code": "import React from \"react\";\n\nconst ImageComparison = () => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className={`absolute inset-0`}\n            alt=\"Light\"\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img src=\"/DualThemeToggleSlider/img/dark.png\" alt=\"Dark\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
+        "language": "tsx"
       }
     },
     {
       "type": "OutPutCard",
       "props": {
         "alt": "Preview of scrolling text",
-        "img": "/DualThemeToggleSlider/img/demo.png"
+        "img": "/DualThemeToggleSlider/img/output/2.png"
       }
     },
     {
