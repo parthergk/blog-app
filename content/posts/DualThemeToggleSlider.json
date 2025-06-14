@@ -126,7 +126,83 @@
     {
       "type": "Note",
       "props": {
-        "text": "Framer Motion's scroll hooks work best with container elements."
+        "text": "inset-0 is a Tailwind CSS utility class that sets all four inset properties — top, right, bottom, and left — to 0."
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Adding Draggable Divider:",
+        "explanation": "In this step, we introduce a Draggable Divider to visually separate the light and dark theme images. We start by adding a new state variable:"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "app/index.tsx",
+        "code": "const [translateX, setTranslateX] = useState(187.5);",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "explanation": "Here, 187.5 is exactly half the width of our image container (375px / 2), which ensures the divider starts centered by default."
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "app/index.tsx",
+        "code": "import React, { useState } from \"react\";\nimport ImageComparison from \"./components/ImageComparison\";\n\nconst index = () => {\n const [translateX, setTranslateX] = useState(187.5); \n return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n        <div className=\"w-full overflow-hidden\">\n          {/* Draggable Divider */}\n          <div \n            className=\"absolute inset-y-0 z-10 w-1 bg-sky-400 cursor-ew-resize\" \n            style={{ transform: `translateX(${translateX}px)` }} \n          ></div>\n          <ImageComparison translateX={translateX} />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "Note",
+      "props": {
+        "text": "We then use this value in the transform: translateX(...) style to position the divider"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "components/ImageComparison.tsx",
+        "code": "import React from \"react\";\n\nconst ImageComparison = ({ translateX }: { translateX: number }) => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className={`absolute inset-0`}\n            alt=\"Light\"\n            style={{clip: `rect(0px, ${translateX - 1}px, 488px, 0px)`,}}\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img src=\"/DualThemeToggleSlider/img/dark.png\" alt=\"Dark\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "explanation": "This value controls how much of the light theme image is visible."
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "components/ImageComparison.tsx",
+        "code": "style={{ clip: `rect(0px, ${translateX - 1}px, 488px, 0px)` }}",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🔍 What does this do?",
+        "list": [
+          "clip allows us to define a rectangular visible area of the light image.",
+          "As the translateX value changes (from dragging), the right edge of the visible rectangle also shifts.",
+          "This creates a sliding mask effect, where the light image is revealed only up to the current translateX position.",
+          "The dark theme image underneath remains fully visible, acting as the base layer."
+        ]
+      }
+    },
+    {
+      "type": "OutPutCard",
+      "props": {
+        "alt": "Preview of scrolling text",
+        "img": "/DualThemeToggleSlider/img/output/3.png"
       }
     },
     {
