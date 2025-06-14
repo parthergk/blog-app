@@ -9,14 +9,14 @@ const index = () => {
   const containerWidth = 375;
   const barWidth = 4;
 
-  function handleMouseDown(e) {
+  function handleStart(clientX: number) {
     isDragging.current = true;
-    startX.current = e.clientX - translateX;
+    startX.current = clientX - translateX;
   }
 
-  function handleMouseMove(e) {
+  function handleMove(clientX: number) {
     if (isDragging.current) {
-      const newTranslateX = e.clientX - startX.current;
+      const newTranslateX = clientX - startX.current;
       const constrainedX = Math.max(
         0,
         Math.min(newTranslateX, containerWidth - barWidth)
@@ -25,32 +25,45 @@ const index = () => {
     }
   }
 
-  function handleMouseUp() {
+  function handleEnd() {
     isDragging.current = false;
   }
 
-  // Touch event handlers
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    handleMouseDown(touch.clientX);
+  // Mouse Event Handlers
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    handleStart(e.clientX);
   };
 
-  const handleTouchMove = (e) => {
-    const touch = e.touches[0];
-    handleMouseMove(touch.clientX);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    handleMove(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    handleEnd();
+  };
+
+  // Touch Event Handlers
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    handleStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    handleMove(e.touches[0].clientX);
   };
 
   const handleTouchEnd = () => {
-    handleMouseUp();
+    handleEnd();
   };
+
   return (
-    <div className="bg-[#030712] p-5  flex justify-center items-center m-auto">
+    <div className="bg-[#030712] p-5 flex justify-center items-center m-auto">
       <div className="h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10">
         <div
-          className=" w-full overflow-hidden"
+          className="w-full overflow-hidden"
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
+          onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
@@ -62,6 +75,7 @@ const index = () => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           ></div>
 
