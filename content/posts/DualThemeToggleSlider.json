@@ -4,20 +4,22 @@
   "title": "Recreating a Tailwind CSS Dual Theme Toggle Slider Component Using Tailwind CSS and React",
   "date": "June 14, 2025",
   "author": "Gaurav Kumar",
-  "description": "In this blog post, I’ll walk you through how I recreated the Dual Theme Toggle Slider component featured on the official Tailwind CSS landing page. This interactive UI lets users drag a center divider to seamlessly toggle between light and dark themes — a sleek and modern way to showcase theme variations.",
-  "tags": ["framer-motion", "parallax", "scroll"],
+  "description": "In this blog post, I'll walk you through how I recreated the Dual Theme Toggle Slider component featured on the official Tailwind CSS landing page. This interactive UI lets users drag a center divider to seamlessly toggle between light and dark themes — a sleek and modern way to showcase theme variations.",
+  "tags": ["tailwind-css", "react", "dual-theme", "slider", "interactive-ui"],
   "img": "/DualThemeToggleSlider/img/demo.png",
   "videoUrl": "/DualThemeToggleSlider/video/demo.mp4",
   "isFeatured": false,
   "type": "Animation",
   "seo": {
-    "title": "Framer Motion Page Transitions – Smooth Animations in React",
-    "description": "Learn how to use Framer Motion to create seamless and elegant page transitions in your React projects.",
+    "title": "Dual Theme Toggle Slider – Interactive React Component with Tailwind CSS",
+    "description": "Learn how to create an interactive dual theme toggle slider component using React and Tailwind CSS, featuring draggable divider and smooth theme transitions.",
     "keywords": [
-      "Framer Motion",
-      "React animation",
-      "Page transitions",
-      "Frontend tips"
+      "Dual Theme Toggle",
+      "React component",
+      "Tailwind CSS",
+      "Interactive slider",
+      "Theme switcher",
+      "Frontend development"
     ],
     "img": "/DualThemeToggleSlider/img/demo.png"
   },
@@ -25,7 +27,7 @@
     {
       "type": "DemoCard",
       "props": {
-        "title": "Text Parallax Demo",
+        "title": "Dual Theme Toggle Slider Demo",
         "previewUrl": "/DualThemeToggleSlider/video/demo.mp4",
         "links": [
           { "label": "Live Demo", "url": "/demo/DualThemeToggleSlider" },
@@ -46,16 +48,16 @@
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Setting Up the Environment:",
-        "explanation": "We are using React and Tailwind CSS for styling. No external UI library is used, but we’ve manually implemented all the logic using basic hooks and DOM events. Make sure your project is set up with:",
+        "heading": "Setting Up the Environment",
+        "explanation": "We are using React and Tailwind CSS for styling. No external UI library is used, but we've manually implemented all the logic using basic hooks and DOM events. Make sure your project is set up with:",
         "list": ["Tailwind CSS", "React (Vite or Create React App)"]
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Setting Up Dotted Background Effect :",
-        "explanation": "let’s first create the basic layout of the component. This includes setting up the container with Dotted Background. The dotted effect in the background is generated using a combination of custom CSS variables and Tailwind's arbitrary values for background image and size:"
+        "heading": "Setting Up Dotted Background Effect",
+        "explanation": "Let's first create the basic layout of the component. This includes setting up the container with Dotted Background. The dotted effect in the background is generated using a combination of custom CSS variables and Tailwind's arbitrary values for background image and size:"
       }
     },
     {
@@ -71,32 +73,32 @@
       "props": {
         "path": "Example code",
         "code": "bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] \nbg-[size:10px_10px] \nbg-fixed \n[--pattern-fg:var(--color-white)]/10",
-        "language": "tsx"
+        "language": "css"
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Breakdown:",
+        "heading": "Breakdown",
         "list": [
-          "bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] This defines a custom background image using a radial gradient. It draws tiny 1px circular dots using the --pattern-fg color, spaced out with transparency in between.",
-          "bg-[size:10px_10px] Sets the size of each tile in the pattern to 10px × 10px, creating an evenly spaced grid of dots.",
-          "bg-fixed Makes the background fixed to the viewport, so it doesn't scroll with the content, enhancing the subtle visual effect.",
-          "[--pattern-fg:var(--color-white)]/10 Defines a custom CSS variable --pattern-fg using Tailwind's opacity utility /10, which applies 10% opacity to the white color — making the dots soft and less distracting."
+          "bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] - This defines a custom background image using a radial gradient. It draws tiny 1px circular dots using the --pattern-fg color, spaced out with transparency in between.",
+          "bg-[size:10px_10px] - Sets the size of each tile in the pattern to 10px × 10px, creating an evenly spaced grid of dots.",
+          "bg-fixed - Makes the background fixed to the viewport, so it doesn't scroll with the content, enhancing the subtle visual effect.",
+          "[--pattern-fg:var(--color-white)]/10 - Defines a custom CSS variable --pattern-fg using Tailwind's opacity utility /10, which applies 10% opacity to the white color — making the dots soft and less distracting."
         ]
       }
     },
     {
       "type": "OutPutCard",
       "props": {
-        "alt": "Preview of scrolling text",
+        "alt": "Preview of dotted background effect",
         "img": "/DualThemeToggleSlider/img/output/1.png"
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Adding both light and dark theme images:",
+        "heading": "Adding Both Light and Dark Theme Images",
         "explanation": "Setting up the light and dark theme images, and styling the layout using Tailwind CSS to closely match the original design from the Tailwind CSS landing page."
       }
     },
@@ -112,14 +114,14 @@
       "type": "CodeCard",
       "props": {
         "path": "components/ImageComparison.tsx",
-        "code": "import React from \"react\";\n\nconst ImageComparison = () => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className={`absolute inset-0`}\n            alt=\"Light\"\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img src=\"/DualThemeToggleSlider/img/dark.png\" alt=\"Dark\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
+        "code": "import React from \"react\";\n\nconst ImageComparison = () => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className=\"absolute inset-0\"\n            alt=\"Light theme\"\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img \n            src=\"/DualThemeToggleSlider/img/dark.png\" \n            className=\"absolute inset-0\"\n            alt=\"Dark theme\" \n          />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
         "language": "tsx"
       }
     },
     {
       "type": "OutPutCard",
       "props": {
-        "alt": "Preview of scrolling text",
+        "alt": "Preview of light and dark theme images layered",
         "img": "/DualThemeToggleSlider/img/output/2.png"
       }
     },
@@ -132,14 +134,14 @@
     {
       "type": "CodeExplanation",
       "props": {
-        "heading": "Adding Draggable Divider:",
+        "heading": "Adding Draggable Divider",
         "explanation": "In this step, we introduce a Draggable Divider to visually separate the light and dark theme images. We start by adding a new state variable:"
       }
     },
     {
       "type": "CodeCard",
       "props": {
-        "path": "app/index.tsx",
+        "path": "components/ImageComparison.tsx",
         "code": "const [translateX, setTranslateX] = useState(187.5);",
         "language": "tsx"
       }
@@ -154,34 +156,34 @@
       "type": "CodeCard",
       "props": {
         "path": "app/index.tsx",
-        "code": "import React, { useState } from \"react\";\nimport ImageComparison from \"./components/ImageComparison\";\n\nconst index = () => {\n const [translateX, setTranslateX] = useState(187.5); \n return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n        <div className=\"w-full overflow-hidden\">\n          {/* Draggable Divider */}\n          <div \n            className=\"absolute inset-y-0 z-10 w-1 bg-sky-400 cursor-ew-resize\" \n            style={{ transform: `translateX(${translateX}px)` }} \n          ></div>\n          <ImageComparison translateX={translateX} />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
+        "code": "import React, { useState } from \"react\";\nimport ImageComparison from \"./components/ImageComparison\";\n\nconst index = () => {\n  const [translateX, setTranslateX] = useState(187.5);\n  \n  return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n        <div className=\"w-full overflow-hidden relative\">\n          {/* Draggable Divider */}\n          <div \n            className=\"absolute inset-y-0 z-10 w-1 bg-sky-400 cursor-ew-resize\" \n            style={{ transform: `translateX(${translateX}px)` }} \n          ></div>\n          <ImageComparison translateX={translateX} />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
         "language": "tsx"
       }
     },
     {
       "type": "Note",
       "props": {
-        "text": "We then use this value in the transform: translateX(...) style to position the divider"
+        "text": "We then use this value in the transform: translateX(...) style to position the divider horizontally."
       }
     },
     {
       "type": "CodeCard",
       "props": {
         "path": "components/ImageComparison.tsx",
-        "code": "import React from \"react\";\n\nconst ImageComparison = ({ translateX }: { translateX: number }) => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className={`absolute inset-0`}\n            alt=\"Light\"\n            style={{clip: `rect(0px, ${translateX - 1}px, 488px, 0px)`,}}\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img src=\"/DualThemeToggleSlider/img/dark.png\" alt=\"Dark\" />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
+        "code": "import React from \"react\";\n\nconst ImageComparison = ({ translateX }: { translateX: number }) => {\n  return (\n    <div className=\"isolate flex h-full w-full items-center justify-center\">\n      <div className=\"h-[30.5rem] w-[375px] relative grid grid-cols-1 grid-rows-1 overflow-hidden rounded-t-4xl bg-gray-950/10 outline outline-gray-950/10 dark:outline-white/10\">\n        <div className=\"col-start-1 row-start-1\">\n          <img\n            src=\"/DualThemeToggleSlider/img/light.png\"\n            className=\"absolute inset-0\"\n            alt=\"Light theme\"\n            style={{ clip: `rect(0px, ${translateX - 1}px, 488px, 0px)` }}\n          />\n        </div>\n        <div className=\"col-start-1 row-start-1\">\n          <img \n            src=\"/DualThemeToggleSlider/img/dark.png\" \n            className=\"absolute inset-0\"\n            alt=\"Dark theme\" \n          />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ImageComparison;",
         "language": "tsx"
       }
     },
     {
       "type": "CodeExplanation",
       "props": {
-        "explanation": "This value controls how much of the light theme image is visible."
+        "explanation": "This value controls how much of the light theme image is visible through the clip property:"
       }
     },
     {
       "type": "CodeCard",
       "props": {
-        "path": "components/ImageComparison.tsx",
+        "path": "Example",
         "code": "style={{ clip: `rect(0px, ${translateX - 1}px, 488px, 0px)` }}",
         "language": "tsx"
       }
@@ -201,14 +203,198 @@
     {
       "type": "OutPutCard",
       "props": {
-        "alt": "Preview of scrolling text",
+        "alt": "Preview of draggable divider with clipped light theme",
         "img": "/DualThemeToggleSlider/img/output/3.png"
       }
     },
     {
-      "type": "Tip",
+      "type": "CodeExplanation",
       "props": {
-        "text": "Use useTransform to map scroll progress to transform values."
+        "heading": "Making the Divider Draggable",
+        "explanation": "To bring interactivity to our slider, we implement custom drag logic using React's useRef and useState hooks."
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "app/index.tsx",
+        "code": "import React, { useRef, useState } from \"react\";\nimport ImageComparison from \"./components/ImageComparison\";\n\nconst index = () => {\n  const isDragging = useRef(false);\n  const [translateX, setTranslateX] = useState(187.5);\n  const startX = useRef(0);\n\n  const containerWidth = 375;\n  const barWidth = 4;\n\n  function handleMouseDown(e) {\n    isDragging.current = true;\n    startX.current = e.clientX - translateX;\n  }\n\n  function handleMouseMove(e) {\n    if (isDragging.current) {\n      const newTranslateX = e.clientX - startX.current;\n      const constrainedX = Math.max(\n        0,\n        Math.min(newTranslateX, containerWidth - barWidth)\n      );\n      setTranslateX(constrainedX);\n    }\n  }\n\n  function handleMouseUp() {\n    isDragging.current = false;\n  }\n\n  const handleTouchStart = (e) => {\n    const touch = e.touches[0];\n    handleMouseDown(touch);\n  };\n\n  const handleTouchMove = (e) => {\n    const touch = e.touches[0];\n    handleMouseMove(touch);\n  };\n\n  const handleTouchEnd = () => {\n    handleMouseUp();\n  };\n\n  return (\n    <div className=\"bg-[#030712] p-5 flex justify-center items-center m-auto\">\n      <div className=\"h-112 p-4 sm:p-8 relative overflow-hidden rounded-lg border border-gray-800 bg-gray-950/[2.5%] bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-white)]/10\">\n        <div\n          className=\"w-full overflow-hidden relative\"\n          onMouseMove={handleMouseMove}\n          onMouseUp={handleMouseUp}\n          onTouchMove={handleTouchMove}\n          onTouchEnd={handleTouchEnd}\n        >\n          {/* Draggable Divider */}\n          <div\n            className=\"absolute inset-y-0 z-10 w-1 bg-sky-400 cursor-ew-resize\"\n            style={{ transform: `translateX(${translateX}px)` }}\n            onMouseDown={handleMouseDown}\n            onTouchStart={handleTouchStart}\n          ></div>\n\n          <ImageComparison translateX={translateX} />\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default index;",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "Here's how the logic works step by step:"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🧠 State and Refs Setup"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "State Variables",
+        "code": "const isDragging = useRef(false); // Tracks whether the user is currently dragging\nconst startX = useRef(0);         // Stores initial drag start position\n\nconst containerWidth = 375;       // Width of the image container\nconst barWidth = 4;              // Width of the draggable bar",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🟦 Drag Start (handleMouseDown)"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "Mouse Down Handler",
+        "code": "function handleMouseDown(e) {\n  isDragging.current = true;\n  startX.current = e.clientX - translateX; // Calculate distance from divider to pointer\n}",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "list": [
+          "When the user clicks (mousedown), we begin dragging.",
+          "We calculate the offset between the initial click (clientX) and current position (translateX) — this makes dragging smooth and relative to the starting point."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🔁 While Dragging (handleMouseMove)"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "Mouse Move Handler",
+        "code": "function handleMouseMove(e) {\n  if (isDragging.current) {\n    const newTranslateX = e.clientX - startX.current;\n    const constrainedX = Math.max(\n      0,\n      Math.min(newTranslateX, containerWidth - barWidth)\n    );\n    setTranslateX(constrainedX); // Update position within bounds\n  }\n}",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "list": [
+          "As the user moves the mouse, we calculate the new position using clientX - startX.current.",
+          "constrainedX makes sure the slider stays within the container bounds, preventing it from going out of view."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🛑 Drag End (handleMouseUp)"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "Mouse Up Handler",
+        "code": "function handleMouseUp() {\n  isDragging.current = false;\n}",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "list": [
+          "This function is used to stop the dragging behavior.",
+          "It sets isDragging.current to false, which tells your logic that the user is no longer interacting with (dragging) the divider."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "📱 Touch Support"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "Touch Handlers",
+        "code": "const handleTouchStart = (e) => {\n  const touch = e.touches[0];\n  handleMouseDown(touch);\n};\n\nconst handleTouchMove = (e) => {\n  const touch = e.touches[0];\n  handleMouseMove(touch);\n};\n\nconst handleTouchEnd = () => {\n  handleMouseUp();\n};",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "list": [
+          "Touch handlers reuse the same mouse logic by extracting the first touch point.",
+          "This ensures the component works seamlessly on mobile devices."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🖱️ Event Handler Placement"
+      }
+    },
+    {
+      "type": "CodeCard",
+      "props": {
+        "path": "JSX Event Binding",
+        "code": "<div\n  className=\"w-full overflow-hidden relative\"\n  onMouseMove={handleMouseMove}\n  onMouseUp={handleMouseUp}\n  onTouchMove={handleTouchMove}\n  onTouchEnd={handleTouchEnd}\n>\n  {/* Draggable Divider */}\n  <div\n    className=\"absolute inset-y-0 z-10 w-1 bg-sky-400 cursor-ew-resize\"\n    style={{ transform: `translateX(${translateX}px)` }}\n    onMouseDown={handleMouseDown}\n    onTouchStart={handleTouchStart}\n  ></div>\n\n  <ImageComparison translateX={translateX} />\n</div>",
+        "language": "tsx"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "list": [
+          "The outer container handles `onMouseMove` and `onMouseUp` to ensure smooth dragging even if the cursor moves outside the bar.",
+          "The divider handles `onMouseDown` and `onTouchStart` to initiate dragging when clicked or touched.",
+          "This separation ensures reliable interaction across the entire component area."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "✅ Why This Approach Works",
+        "list": [
+          "The outer container ensures smooth dragging even if the mouse moves outside the bar.",
+          "The inner bar ensures you can grab and drag directly from it.",
+          "Touch support makes it work on mobile devices.",
+          "Boundary constraints keep the slider within the visible area."
+        ]
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🎯 Final Summary",
+        "explanation": "These event handlers work together to create a smooth dragging experience:",
+        "list": [
+          "Start dragging on mouse/touch down.",
+          "Update position while dragging with boundary constraints.",
+          "Stop dragging on mouse/touch up.",
+          "Support both desktop and mobile interactions seamlessly."
+        ]
+      }
+    },
+    {
+      "type": "DemoCard",
+      "props": {
+        "title": "Dual Theme Toggle Slider Demo",
+        "previewUrl": "/DualThemeToggleSlider/video/demo.mp4"
+      }
+    },
+    {
+      "type": "CodeExplanation",
+      "props": {
+        "heading": "🎉 Conclusion",
+        "explanation": "You've successfully created an interactive Dual Theme Toggle Slider component! This component demonstrates advanced React patterns including custom drag logic, state management, and CSS clipping techniques. The result is a smooth, responsive UI element that works across desktop and mobile devices, perfectly recreating the elegant theme comparison experience from the Tailwind CSS landing page."
       }
     }
   ]

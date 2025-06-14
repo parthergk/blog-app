@@ -21,7 +21,7 @@ const DemoCard:React.FC<Props> = ({ previewUrl, links }) => {
       </div>
 
       <div className="flex gap-4 mt-4">
-        {links.map((link, index) => (
+        {links && links.map((link, index) => (
           <Link href={link.url} key={index}>
           <button className="text-base bg-neutral-200 py-0.5 dark:bg-neutral-900 rounded-[5px] px-2 flex justify-center items-center cursor-pointer  shadow-neutral-400 dark:shadow-neutral-950 dark:hover:shadow-neutral-900 shadow-lg hover:shadow-neutral-500 hover:shadow-lg hover:scale-105 transition-all duration-150 ease-in-out">
             {link.label}
