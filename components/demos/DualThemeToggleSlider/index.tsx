@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import ImageComparison from "./components/ImageComparison";
 
-const index = () => {
+const Index = () => {
   const isDragging = useRef(false);
   const [translateX, setTranslateX] = useState(187.5);
   const startX = useRef(0);
@@ -86,4 +86,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
