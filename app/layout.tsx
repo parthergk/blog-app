@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "React UI",
     "Design Systems",
   ],
+  robots: "index, follow",
   authors: [{ name: "Parther", url: "https://parther.in" }],
   creator: "Parther",
 
